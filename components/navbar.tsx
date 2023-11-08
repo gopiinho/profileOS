@@ -1,4 +1,5 @@
 import NavIcons from './navIcons'
+import EthPrice from './ethPrice'
 
 // Icons
 import { MdContactMail } from 'react-icons/md'
@@ -17,6 +18,7 @@ export default function Navbar() {
         <NavIcons icon={<TiThMenuOutline />} title='menu' />
         <NavIcons icon={<GiAbstract029 />} title='about' />
         <NavIcons icon={<MdContactMail />} title='contact' />
+        <EthPrice />
       </div>
       <div className='flex items-center justify-center p-2 pb-5'>
         <ModeToggle />
