@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { ThemeProvider } from '@/components/themeprovider'
 import './globals.css'
+import Navbar from '@/components/navbar'
 
 export const metadata: Metadata = {
   title: 'Gopinho - Profilev2',
@@ -16,15 +17,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en'>
+    <html lang='en' className={ocrb.className}>
       <body>
         <ThemeProvider
           attribute='class'
-          defaultTheme='system'
+          defaultTheme='dark'
           enableSystem
           disableTransitionOnChange
         >
-          <div className={`${ocrb.className} relative flex h-screen`}>
+          <div className={`relative flex h-screen`}>
+            <Navbar />
             {children}
           </div>
         </ThemeProvider>
