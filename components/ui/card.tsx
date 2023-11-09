@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { IoIosClose } from 'react-icons/io'
 
 import { cn } from '@/lib/utils'
 
@@ -8,10 +9,7 @@ const Card = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn(
-      'rounded-lg border bg-card text-card-foreground shadow-sm',
-      className
-    )}
+    className={cn('border bg-card text-card-foreground shadow-sm', className)}
     {...props}
   />
 ))
@@ -20,12 +18,20 @@ Card.displayName = 'Card'
 const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('flex flex-col space-y-1.5 p-6', className)}
+    className={cn(
+      'flex select-none flex-col space-y-1.5 bg-foreground text-background',
+      className
+    )}
     {...props}
-  />
+  >
+    <div className='flex items-center justify-between border-b p-2'>
+      {children}
+      <IoIosClose className='cursor-pointer text-2xl duration-200 hover:text-accent/80' />
+    </div>
+  </div>
 ))
 CardHeader.displayName = 'CardHeader'
 
@@ -36,7 +42,7 @@ const CardTitle = React.forwardRef<
   <h3
     ref={ref}
     className={cn(
-      'text-2xl font-semibold leading-none tracking-tight',
+      'text-xl font-semibold leading-none tracking-tight',
       className
     )}
     {...props}
