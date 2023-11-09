@@ -21,7 +21,7 @@ const EthPrice = () => {
   }, [])
 
   return (
-    <div className='absolute bottom-2 right-2 cursor-pointer text-xs duration-200 hover:text-[#66d847]'>
+    <div className='absolute bottom-2 right-2 cursor-pointer text-xs duration-200 hover:text-accent'>
       {ethereumPrice ? (
         <div className='flex items-center gap-2'>
           <FaEthereum size={20} />

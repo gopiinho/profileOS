@@ -12,11 +12,11 @@ export default function NavIcons({ icon, title = '', onClick }: IconProps) {
     <div
       onClick={onClick}
       draggable
-      className='font-cyber group hidden w-full cursor-pointer items-center justify-center text-center duration-300 hover:text-[#66d847] sm:flex'
+      className='font-cyber group hidden w-full cursor-pointer items-center justify-center text-center duration-300 hover:text-accent sm:flex'
     >
       <div className='flex flex-col items-center gap-2'>
-        <span className='text-3xl group-hover:bg-accent/10'>{icon}</span>
-        <span className='group-hover:bg-[#66d847]/10'>
+        <span className='text-3xl'>{icon}</span>
+        <span className='group-hover:bg-accent/10'>
           <AnimatedHeading>{title}</AnimatedHeading>
         </span>
       </div>
