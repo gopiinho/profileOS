@@ -9,7 +9,7 @@ export function ModeToggle() {
   const { theme, setTheme } = useTheme()
 
   return (
-    <div className='group duration-300'>
+    <div className='group'>
       <Button
         variant='ghost'
         size='icon'
