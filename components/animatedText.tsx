@@ -7,7 +7,7 @@ interface AnimatedHeadingProps {
 }
 
 const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({ children }) => {
-  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  const letters = 'abcdefghijklmnopqrstuvwxyz'
   let interval: NodeJS.Timeout | null = null
 
   useEffect(() => {
