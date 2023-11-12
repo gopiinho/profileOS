@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { IoIosClose } from 'react-icons/io'
 
 import { cn } from '@/lib/utils'
@@ -31,12 +31,24 @@ const CardHeader = React.forwardRef<
     {...props}
   >
     <div className='flex items-center justify-between border-b p-2'>
-      {children}
+      <div className='flex items-center gap-1'>{children}</div>
       <IoIosClose className='cursor-pointer text-2xl duration-200 hover:text-accent/80' />
     </div>
   </div>
 ))
 CardHeader.displayName = 'CardHeader'
+
+const CardIcon = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+  <h3
+    ref={ref}
+    className={cn('text-sm leading-none tracking-tight', className)}
+    {...props}
+  />
+))
+CardIcon.displayName = 'CardIcon'
 
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
@@ -85,4 +97,12 @@ const CardFooter = React.forwardRef<
 ))
 CardFooter.displayName = 'CardFooter'
 
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardIcon,
+  CardTitle,
+  CardDescription,
+  CardContent,
+}

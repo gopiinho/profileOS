@@ -1,7 +1,7 @@
-import { Card, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardHeader, CardIcon, CardTitle } from '@/components/ui/card'
 import { Button } from './ui/button'
 import { CardProps } from '@/utils/constants'
-
+import { MdContactMail } from 'react-icons/md'
 // Icons
 import { FaXTwitter } from 'react-icons/fa6'
 import { AiFillMail } from 'react-icons/ai'
@@ -12,6 +12,9 @@ export default function Contact({ title }: CardProps) {
     <div className='flex items-center justify-center'>
       <Card className='w-[500px]'>
         <CardHeader>
+          <CardIcon>
+            <MdContactMail />
+          </CardIcon>
           <CardTitle>{title}</CardTitle>
         </CardHeader>
         <div className='flex flex-col justify-between'>
