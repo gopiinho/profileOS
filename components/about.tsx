@@ -29,16 +29,15 @@ export default function About({ title }: CardProps) {
           style={{ fontFamily: 'modeseven' }}
         >
           <div className='flex flex-row justify-between p-4'>
-            <span>
-              This website is an attempt to show my
-              <span className='text-accent'> personality</span> as a person and
+            <p>
+              This website is an attempt to show my personality as a person and
               a developer. <br />
-              Currently working at
-              <span className='text-accent'>
-                <Link href='https://enderprotocol.io'> ender protocol </Link>
-              </span>
+              Currently working at{' '}
+              <span className='text-accent duration-200 hover:underline'>
+                <Link href='https://enderprotocol.io'>ender protocol</Link>
+              </span>{' '}
               building their webapp and frontends.
-            </span>
+            </p>
             <div className='flex h-28 w-28 shrink-0'>
               {theme == 'light' ? (
                 <Image src={lightPic} alt='profile pic' />
