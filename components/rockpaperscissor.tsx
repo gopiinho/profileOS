@@ -7,6 +7,9 @@ import { CardProps } from '@/utils/constants'
 
 // Icons
 import { GiAbstract029 } from 'react-icons/gi'
+import { FaHandRock } from 'react-icons/fa'
+import { FaHandPaper } from 'react-icons/fa'
+import { FaHandScissors } from 'react-icons/fa'
 
 /* ------------- Game Logic --------------- */
 
@@ -66,7 +69,11 @@ export default function RockPaperScissor({ title }: CardProps) {
           style={{ fontFamily: 'modeseven' }}
         >
           <div className='py-3'>
-            <h4 className='text-4xl'>RoPaSc</h4>
+            <h4 className='text-4xl'>
+              <span className='text-accent'>R</span>o
+              <span className='text-accent'>P</span>a
+              <span className='text-accent'>S</span>c
+            </h4>
             <p className='text-[0.68rem]'>Rock.Paper.Scissors</p>
           </div>
           <div className='flex- flex items-center'>
@@ -79,16 +86,18 @@ export default function RockPaperScissor({ title }: CardProps) {
               <span className='text-accent'>{cpuScore}</span>
             </div>
           </div>
-          <div className='flex h-28 items-center justify-center'>{result}</div>
-          <div className='flex h-16 border-t border-accent/20'>
+          <div className='flex h-28 flex-col items-center justify-center'>
+            {result}
+          </div>
+          <div className='flex h-40 flex-col border-t border-accent/20 sm:h-28 sm:flex-row'>
             <Button size='full' onClick={() => playerMove('rock')}>
-              Rock
+              <FaHandRock size={27} />
             </Button>
             <Button size='full' onClick={() => playerMove('paper')}>
-              Paper
+              <FaHandPaper size={27} />
             </Button>
             <Button size='full' onClick={() => playerMove('scissors')}>
-              Scissors
+              <FaHandScissors size={27} className='rotate-90 transform' />
             </Button>
           </div>
         </div>
