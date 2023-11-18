@@ -7,6 +7,7 @@ import { GiAbstract029 } from 'react-icons/gi'
 import { TiThMenuOutline } from 'react-icons/ti'
 import { FaToolbox } from 'react-icons/fa'
 import { ModeToggle } from './ui/modetoggle'
+import { FaGamepad } from 'react-icons/fa6'
 
 export default function Navbar() {
   return (
@@ -17,6 +18,7 @@ export default function Navbar() {
         <NavIcons icon={<TiThMenuOutline />} title='menu' />
         <NavIcons icon={<GiAbstract029 />} title='about' />
         <NavIcons icon={<MdContactMail />} title='contact' />
+        <NavIcons icon={<FaGamepad />} title='ropasc' />
       </div>
       <div className='flex items-center justify-center p-2 pb-5'>
         <ModeToggle />
