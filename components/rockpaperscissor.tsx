@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Card, CardHeader, CardIcon, CardTitle } from '@/components/ui/card'
 import { Button } from './ui/button'
 import { CardProps } from '@/utils/constants'
+import { useModalStore } from '@/utils/State/modalstore'
 
 // Icons
 import { GiAbstract029 } from 'react-icons/gi'
@@ -25,6 +26,10 @@ export default function RockPaperScissor({ title }: CardProps) {
   const [result, setResult] = useState('Pick')
   const [playerScore, setPlayerScore] = useState(0)
   const [cpuScore, setCpuScore] = useState(0)
+
+  const { toggleGameVisible } = useModalStore((state) => ({
+    toggleGameVisible: state.toggleGameVisible,
+  }))
 
   // cpu generated
   function getCpuMove() {
@@ -56,9 +61,9 @@ export default function RockPaperScissor({ title }: CardProps) {
   }
 
   return (
-    <div className='flex items-center justify-center'>
+    <div className='absolute inset-0 flex items-center justify-center'>
       <Card className='w-[300px] lg:w-[700px]'>
-        <CardHeader>
+        <CardHeader onClick={toggleGameVisible}>
           <CardIcon>
             <GiAbstract029 />
           </CardIcon>
@@ -76,7 +81,7 @@ export default function RockPaperScissor({ title }: CardProps) {
             </h4>
             <p className='text-[0.68rem]'>Rock.Paper.Scissors</p>
           </div>
-          <div className='flex- flex items-center'>
+          <div className='flex items-center'>
             <div className='flex w-full flex-col'>
               <span className='text-xl'>You</span>
               <span className='text-accent'>{playerScore}</span>

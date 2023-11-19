@@ -3,10 +3,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Card, CardHeader, CardIcon, CardTitle } from '@/components/ui/card'
-import { Button } from './ui/button'
 import { CardProps } from '@/utils/constants'
-import AnimatedHeading from './animatedText'
 import { useTheme } from 'next-themes'
+import { useModalStore } from '@/utils/State/modalstore'
 
 // Icons
 import { GiAbstract029 } from 'react-icons/gi'
@@ -15,10 +14,13 @@ import lightPic from '@/public/assets/about2.gif'
 
 export default function About({ title }: CardProps) {
   const { theme } = useTheme()
+  const { toggleAboutVisible } = useModalStore((state) => ({
+    toggleAboutVisible: state.toggleAboutVisible,
+  }))
   return (
-    <div className='flex items-center justify-center'>
+    <div className='absolute inset-0 flex items-center justify-center'>
       <Card className='w-[600px] lg:w-[700px]'>
-        <CardHeader>
+        <CardHeader onClick={toggleAboutVisible}>
           <CardIcon>
             <GiAbstract029 />
           </CardIcon>

@@ -21,7 +21,7 @@ Card.displayName = 'Card'
 const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, children, ...props }, ref) => (
+>(({ className, onClick, children, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
@@ -32,7 +32,9 @@ const CardHeader = React.forwardRef<
   >
     <div className='flex items-center justify-between border-b p-2'>
       <div className='flex items-center gap-1'>{children}</div>
-      <IoIosClose className='cursor-pointer text-2xl duration-200 hover:text-accent/80' />
+      <span onClick={onClick}>
+        <IoIosClose className='cursor-pointer text-2xl duration-200 hover:text-accent/80' />
+      </span>
     </div>
   </div>
 ))
