@@ -19,7 +19,7 @@ export default function About({ title }: CardProps) {
   }))
   return (
     <div className='absolute inset-0 flex items-center justify-center'>
-      <Card className='w-[600px] lg:w-[700px]'>
+      <Card className='h-[95%] w-[95%]'>
         <CardHeader onClick={toggleAboutVisible}>
           <CardIcon>
             <GiAbstract029 />

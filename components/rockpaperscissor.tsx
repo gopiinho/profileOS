@@ -62,7 +62,7 @@ export default function RockPaperScissor({ title }: CardProps) {
 
   return (
     <div className='absolute inset-0 flex items-center justify-center'>
-      <Card className='w-[300px] lg:w-[700px]'>
+      <Card className='relative h-[95%] w-[95%]'>
         <CardHeader onClick={toggleGameVisible}>
           <CardIcon>
             <GiAbstract029 />
@@ -73,28 +73,35 @@ export default function RockPaperScissor({ title }: CardProps) {
           className='flex flex-col text-center text-base'
           style={{ fontFamily: 'modeseven' }}
         >
-          <div className='py-3'>
-            <h4 className='text-4xl'>
+          <div className='py-4 sm:py-8'>
+            <h4 className='text-4xl sm:text-8xl'>
               <span className='text-accent'>R</span>o
               <span className='text-accent'>P</span>a
               <span className='text-accent'>S</span>c
             </h4>
-            <p className='text-[0.68rem]'>Rock.Paper.Scissors</p>
+            <p className='text-base'>Rock.Paper.Scissors</p>
           </div>
-          <div className='flex items-center'>
+          <div className='flex items-center py-10'>
             <div className='flex w-full flex-col'>
-              <span className='text-xl'>You</span>
-              <span className='text-accent'>{playerScore}</span>
+              <span className='text-xl sm:text-3xl'>You</span>
+              <span className='text-base text-accent sm:text-3xl'>
+                {playerScore}
+              </span>
             </div>
             <div className='flex w-full flex-col'>
-              <span className='text-xl'>CPU</span>
-              <span className='text-accent'>{cpuScore}</span>
+              <span className='text-xl text-accent sm:text-4xl'>vs</span>
+            </div>
+            <div className='flex w-full flex-col'>
+              <span className='text-xl sm:text-3xl'>CPU</span>
+              <span className='text-base text-accent sm:text-3xl'>
+                {cpuScore}
+              </span>
             </div>
           </div>
-          <div className='flex h-28 flex-col items-center justify-center'>
+          <div className='flex h-28 flex-col items-center justify-center text-xl sm:h-40 sm:text-3xl'>
             {result}
           </div>
-          <div className='flex h-40 flex-col border-t border-accent/20 sm:h-28 sm:flex-row'>
+          <div className='absolute bottom-0 flex h-40 w-full flex-col border-t border-accent/20 sm:h-60 sm:flex-row'>
             <Button size='full' onClick={() => playerMove('rock')}>
               <FaHandRock size={27} />
             </Button>

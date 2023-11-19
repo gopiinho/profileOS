@@ -19,8 +19,8 @@ export default function Navbar() {
       toggleGameVisible: state.toggleGameVisible,
     }))
   return (
-    <div className='flex flex-col justify-between gap-8'>
-      <div className='flex flex-col items-center justify-between gap-8 p-2 pt-5'>
+    <div className='z-20 flex flex-col justify-between gap-8'>
+      <div className='flex select-none flex-col items-center justify-between gap-8 p-2 pt-5'>
         <NavIcons icon={<BsFileCodeFill />} title='work' />
         <NavIcons icon={<FaToolbox />} title='skills' />
         <NavIcons icon={<TiThMenuOutline />} title='menu' />

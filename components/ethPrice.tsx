@@ -21,16 +21,16 @@ const EthPrice = () => {
   }, [])
 
   return (
-    <div className='absolute bottom-2 right-2 cursor-pointer text-xs duration-200 hover:text-accent'>
+    <div className='absolute bottom-4 right-4 z-20 cursor-pointer text-xs duration-200 hover:text-accent'>
       {ethereumPrice ? (
         <div className='flex items-center gap-2'>
           <FaEthereum size={20} />
           <AnimatedHeading>{ethereumPrice}</AnimatedHeading>
         </div>
       ) : (
-        <div className='flex items-center gap-2'>
+        <div className='group flex items-center gap-2'>
           <FaEthereum size={20} />
-          <p className='text-xs'>loading</p>
+          <div className='h-4 w-[3.5rem] animate-pulse bg-foreground text-xs' />
         </div>
       )}
     </div>
