@@ -25,6 +25,7 @@ export default function RockPaperScissor({ title }: CardProps) {
   const [result, setResult] = useState('Pick')
   const [playerScore, setPlayerScore] = useState(0)
   const [cpuScore, setCpuScore] = useState(0)
+  const [turns, setTurns] = useState(0)
 
   // cpu generated
   function getCpuMove() {
@@ -38,6 +39,7 @@ export default function RockPaperScissor({ title }: CardProps) {
   }
 
   function getResult(playerMove: string, cpuMove: string) {
+    setTurns(turns + 1)
     let result = ''
     if (playerMove === cpuMove) {
       result = Result.tie
@@ -55,6 +57,12 @@ export default function RockPaperScissor({ title }: CardProps) {
     setResult(result)
   }
 
+  function resetStats() {
+    setCpuScore(0)
+    setPlayerScore(0)
+    setTurns(0)
+  }
+
   return (
     <div className='flex items-center justify-center'>
       <Card className='w-[300px] lg:w-[700px]'>
@@ -68,13 +76,19 @@ export default function RockPaperScissor({ title }: CardProps) {
           className='flex flex-col text-center text-base'
           style={{ fontFamily: 'modeseven' }}
         >
-          <div className='py-3'>
+          <div className='relative py-3'>
             <h4 className='text-4xl'>
               <span className='text-accent'>R</span>o
               <span className='text-accent'>P</span>a
               <span className='text-accent'>S</span>c
             </h4>
             <p className='text-[0.68rem]'>Rock.Paper.Scissors</p>
+            <div className='absolute right-0 top-0 p-4'>
+              <p>Turns: {turns}</p>
+              <span className='cursor-pointer p-1' onClick={() => resetStats()}>
+                Reset
+              </span>
+            </div>
           </div>
           <div className='flex- flex items-center'>
             <div className='flex w-full flex-col'>
