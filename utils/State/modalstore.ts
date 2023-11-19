@@ -2,6 +2,8 @@
 import create from 'zustand'
 
 type ModalStore = {
+  workVisible: boolean
+  toggleWorkVisible: () => void
   contactVisible: boolean
   toggleContactVisible: () => void
   aboutVisible: boolean
@@ -11,6 +13,9 @@ type ModalStore = {
 }
 
 export const useModalStore = create<ModalStore>((set) => ({
+  workVisible: false,
+  toggleWorkVisible: () =>
+    set((state) => ({ workVisible: !state.workVisible })),
   contactVisible: false,
   toggleContactVisible: () =>
     set((state) => ({ contactVisible: !state.contactVisible })),

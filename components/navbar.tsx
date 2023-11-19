@@ -12,16 +12,25 @@ import { FaGamepad } from 'react-icons/fa6'
 import { useModalStore } from '@/utils/State/modalstore'
 
 export default function Navbar() {
-  const { toggleContactVisible, toggleAboutVisible, toggleGameVisible } =
-    useModalStore((state) => ({
-      toggleContactVisible: state.toggleContactVisible,
-      toggleAboutVisible: state.toggleAboutVisible,
-      toggleGameVisible: state.toggleGameVisible,
-    }))
+  const {
+    toggleWorkVisible,
+    toggleContactVisible,
+    toggleAboutVisible,
+    toggleGameVisible,
+  } = useModalStore((state) => ({
+    toggleWorkVisible: state.toggleWorkVisible,
+    toggleContactVisible: state.toggleContactVisible,
+    toggleAboutVisible: state.toggleAboutVisible,
+    toggleGameVisible: state.toggleGameVisible,
+  }))
   return (
     <div className='z-20 flex flex-col justify-between gap-8'>
       <div className='flex select-none flex-col items-center justify-between gap-8 p-2 pt-5'>
-        <NavIcons icon={<BsFileCodeFill />} title='work' />
+        <NavIcons
+          icon={<BsFileCodeFill />}
+          title='work'
+          onClick={toggleWorkVisible}
+        />
         <NavIcons icon={<FaToolbox />} title='skills' />
         <NavIcons icon={<TiThMenuOutline />} title='menu' />
         <NavIcons
