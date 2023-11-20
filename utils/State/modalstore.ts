@@ -1,4 +1,3 @@
-// modalStore.js
 import create from 'zustand'
 
 type ModalStore = {
@@ -13,7 +12,7 @@ type ModalStore = {
 }
 
 export const useModalStore = create<ModalStore>((set) => ({
-  workVisible: false,
+  workVisible: true,
   toggleWorkVisible: () =>
     set((state) => ({ workVisible: !state.workVisible })),
   contactVisible: false,
