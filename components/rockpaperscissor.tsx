@@ -101,15 +101,15 @@ export default function RockPaperScissor({ title }: CardProps) {
           <div className='flex h-28 flex-col items-center justify-center text-xl sm:h-40 sm:text-3xl'>
             {result}
           </div>
-          <div className='absolute bottom-0 flex h-40 w-full flex-col border-t border-accent/20 sm:h-60 sm:flex-row'>
+          <div className='absolute bottom-0 flex h-40 w-full flex-col border-t border-accent/20 text-5xl sm:h-60 sm:flex-row'>
             <Button size='full' onClick={() => playerMove('rock')}>
-              <FaHandRock size={27} />
+              <FaHandRock className='svg text-2xl sm:text-5xl' />
             </Button>
             <Button size='full' onClick={() => playerMove('paper')}>
-              <FaHandPaper size={27} />
+              <FaHandPaper className='svg text-2xl sm:text-5xl' />
             </Button>
             <Button size='full' onClick={() => playerMove('scissors')}>
-              <FaHandScissors size={27} className='rotate-90 transform' />
+              <FaHandScissors className='svg rotate-90 transform text-2xl sm:text-5xl' />
             </Button>
           </div>
         </div>

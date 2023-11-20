@@ -1,22 +1,41 @@
 'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
 import { Card, CardHeader, CardIcon, CardTitle } from '@/components/ui/card'
 import { CardProps } from '@/utils/constants'
 import { useTheme } from 'next-themes'
 import { useModalStore } from '@/utils/State/modalstore'
-
-// Icons
+import Projects from './projects'
+import { ProjectProps } from '@/utils/constants'
+// Icons & Images
 import { BsFileCodeFill } from 'react-icons/bs'
+import enderApp from '@/public/app.png'
+import sibyl from '@/public/sibyl.png'
+
+const ProjectItems: ProjectProps[] = [
+  {
+    name: 'Ender Protocol - App',
+    description:
+      'Next.js app powered by rainbowkit & wagmi.sh to bring best defi. Now I want to test it using random text which will increase its area but I cannot tell of anything else.',
+    url: 'https://app.enderprotocol.io',
+    stack: ['Next.js', 'Tailwindcss', 'Wagmi.sh', 'Rainbow Kit'],
+    img: enderApp,
+  },
+  {
+    name: 'Sibyl Access',
+    description:
+      'Next.js app powered by rainbowkit & wagmi.sh to bring best defi. Now I want to test it using random text which will increase its area but I cannot tell of anything else.',
+    url: 'https://app.enderprotocol.io',
+    stack: ['React', 'Chakraui', 'Ethers.js'],
+    img: sibyl,
+  },
+]
 
 export default function Work({ title }: CardProps) {
-  const { theme } = useTheme()
   const { toggleWorkVisible } = useModalStore((state) => ({
     toggleWorkVisible: state.toggleWorkVisible,
   }))
   return (
-    <div className='absolute inset-0 flex items-center justify-center'>
+    <div className='absolute inset-0 flex items-center justify-center animate-in fade-in zoom-out'>
       <Card className='h-[95%] w-[95%]'>
         <CardHeader onClick={toggleWorkVisible}>
           <CardIcon>
@@ -25,10 +44,20 @@ export default function Work({ title }: CardProps) {
           <CardTitle>{title}</CardTitle>
         </CardHeader>
         <div
-          className='flex h-full flex-col text-base'
+          className='scrollbar flex h-full flex-col overflow-scroll text-base'
           style={{ fontFamily: 'modeseven' }}
         >
-          <div className='flex  flex-row justify-between p-4'></div>
+          <div className='flex flex-col justify-between'>
+            {ProjectItems.map((data) => (
+              <Projects
+                name={data.name}
+                description={data.description}
+                url={data.url}
+                stack={data.stack}
+                img={data.img}
+              />
+            ))}
+          </div>
         </div>
       </Card>
     </div>
