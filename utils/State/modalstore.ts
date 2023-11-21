@@ -12,7 +12,7 @@ type ModalStore = {
 }
 
 export const useModalStore = create<ModalStore>((set) => ({
-  workVisible: true,
+  workVisible: false,
   toggleWorkVisible: () =>
     set((state) => ({ workVisible: !state.workVisible })),
   contactVisible: false,
