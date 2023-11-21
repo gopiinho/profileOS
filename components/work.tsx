@@ -17,7 +17,8 @@ import profileOs from '@/public/profileos.png'
 const ProjectItems: ProjectProps[] = [
   {
     name: 'Ender Protocol - App',
-    description: 'Dapp built from scratch using next.js and typescript. ',
+    description:
+      'Dapp built from scratch using next.js and typescript. Wallet & smart contract integrations handled with rainbow kit and wagmi.sh hooks.',
     url: 'https://app.enderprotocol.io',
     gurl: 'https://github.com/enderprotocol/enderprotocol-app',
     stack: ['Next.js', 'Typescript', 'Tailwindcss', 'Wagmi.sh', 'Rainbow Kit'],
@@ -26,7 +27,7 @@ const ProjectItems: ProjectProps[] = [
   {
     name: 'Sibyl Access',
     description:
-      'React app, styled by chakraui and smart contract integration with etherjs.',
+      'React app, styled by chakraui and smart contract integration with etherjs. Focus being the theme of the world that nfts take place in.',
     url: 'https://whimsical-kheer-5221bd.netlify.app/',
     gurl: 'https://github.com/igopib/sibyl-access',
     stack: ['React', 'ChakraUi', 'Ethers.js'],
@@ -34,7 +35,8 @@ const ProjectItems: ProjectProps[] = [
   },
   {
     name: 'Ender Protocol',
-    description: 'Landing page created with layouts and custom css.',
+    description:
+      'Landing page created with layouts and custom css. Heavy use of gradients and custom styling.',
     url: 'https://enderprotocol.io',
     gurl: 'https://github.com/enderprotocol/enderprotocol-fe',
     stack: ['Next.js', 'Tailwindcss', 'CSS'],

@@ -39,7 +39,7 @@ const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({ children }) => {
           }
 
           iteration += 1 / 3
-        }, 30)
+        }, 15)
       }
     }
 
