@@ -56,7 +56,8 @@ export default function Work({ title }: CardProps) {
             translateX: '-50%',
             translateY: '-50%',
           }}
-          animate={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          animate={{ scale: 1, x: '50%', y: '50%' }}
           exit={{
             scale: 0,
             x: '0%',
