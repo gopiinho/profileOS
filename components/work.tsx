@@ -10,6 +10,8 @@ import { ProjectProps } from '@/utils/constants'
 import { BsFileCodeFill } from 'react-icons/bs'
 import enderApp from '@/public/app.png'
 import sibyl from '@/public/sibyl.png'
+import ender from '@/public/ep.png'
+import profileOs from '@/public/profileos.png'
 
 const ProjectItems: ProjectProps[] = [
   {
@@ -17,16 +19,23 @@ const ProjectItems: ProjectProps[] = [
     description:
       'Next.js app powered by rainbowkit & wagmi.sh to bring best defi. Now I want to test it using random text which will increase its area but I cannot tell of anything else.',
     url: 'https://app.enderprotocol.io',
-    stack: ['Next.js', 'Tailwindcss', 'Wagmi.sh', 'Rainbow Kit'],
+    stack: ['Next.js', 'Typescript', 'Tailwindcss', 'Wagmi.sh', 'Rainbow Kit'],
     img: enderApp,
   },
   {
     name: 'Sibyl Access',
     description:
-      'Next.js app powered by rainbowkit & wagmi.sh to bring best defi. Now I want to test it using random text which will increase its area but I cannot tell of anything else.',
-    url: 'https://app.enderprotocol.io',
-    stack: ['React', 'Chakraui', 'Ethers.js'],
+      'React app, styled by chakraui and smart contract integration with etherjs.',
+    url: 'https://whimsical-kheer-5221bd.netlify.app/',
+    stack: ['React', 'ChakraUi', 'Ethers.js'],
     img: sibyl,
+  },
+  {
+    name: 'Ender Protocol',
+    description: 'Landing page created with layouts and custom css.',
+    url: 'https://enderprotocol.io',
+    stack: ['Next.js', 'Tailwindcss', 'CSS'],
+    img: ender,
   },
 ]
 
