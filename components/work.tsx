@@ -17,9 +17,9 @@ import profileOs from '@/public/profileos.png'
 const ProjectItems: ProjectProps[] = [
   {
     name: 'Ender Protocol - App',
-    description:
-      'Next.js app powered by rainbowkit & wagmi.sh to bring best defi. Now I want to test it using random text which will increase its area but I cannot tell of anything else.',
+    description: 'Dapp built from scratch using next.js and typescript. ',
     url: 'https://app.enderprotocol.io',
+    gurl: 'https://github.com/enderprotocol/enderprotocol-app',
     stack: ['Next.js', 'Typescript', 'Tailwindcss', 'Wagmi.sh', 'Rainbow Kit'],
     img: enderApp,
   },
@@ -28,6 +28,7 @@ const ProjectItems: ProjectProps[] = [
     description:
       'React app, styled by chakraui and smart contract integration with etherjs.',
     url: 'https://whimsical-kheer-5221bd.netlify.app/',
+    gurl: 'https://github.com/igopib/sibyl-access',
     stack: ['React', 'ChakraUi', 'Ethers.js'],
     img: sibyl,
   },
@@ -35,6 +36,7 @@ const ProjectItems: ProjectProps[] = [
     name: 'Ender Protocol',
     description: 'Landing page created with layouts and custom css.',
     url: 'https://enderprotocol.io',
+    gurl: 'https://github.com/enderprotocol/enderprotocol-fe',
     stack: ['Next.js', 'Tailwindcss', 'CSS'],
     img: ender,
   },
@@ -82,6 +84,7 @@ export default function Work({ title }: CardProps) {
                 name={data.name}
                 description={data.description}
                 url={data.url}
+                gurl={data.gurl}
                 stack={data.stack}
                 img={data.img}
               />
