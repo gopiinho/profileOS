@@ -6,6 +6,7 @@ import { useTheme } from 'next-themes'
 import { useModalStore } from '@/utils/State/modalstore'
 import Projects from './projects'
 import { ProjectProps } from '@/utils/constants'
+import { AnimatePresence, motion } from 'framer-motion'
 // Icons & Images
 import { BsFileCodeFill } from 'react-icons/bs'
 import enderApp from '@/public/app.png'
@@ -40,35 +41,57 @@ const ProjectItems: ProjectProps[] = [
 ]
 
 export default function Work({ title }: CardProps) {
-  const { toggleWorkVisible } = useModalStore((state) => ({
+  const { workVisible, toggleWorkVisible } = useModalStore((state) => ({
+    workVisible: state.workVisible,
     toggleWorkVisible: state.toggleWorkVisible,
   }))
   return (
-    <div className='absolute inset-0 flex items-center justify-center animate-in fade-in zoom-out'>
-      <Card className='h-[95%] w-[95%]'>
-        <CardHeader onClick={toggleWorkVisible}>
-          <CardIcon>
-            <BsFileCodeFill />
-          </CardIcon>
-          <CardTitle>{title}</CardTitle>
-        </CardHeader>
-        <div
-          className='scrollbar flex h-full flex-col overflow-scroll text-base'
-          style={{ fontFamily: 'modeseven' }}
+    <AnimatePresence>
+      {workVisible && (
+        <motion.div
+          initial={{
+            scale: 0,
+            x: '0%',
+            y: '5%',
+            translateX: '-50%',
+            translateY: '-50%',
+          }}
+          animate={{ scale: 1 }}
+          exit={{
+            scale: 0,
+            x: '0%',
+            y: '5%',
+            translateX: '-50%',
+            translateY: '-50%',
+          }}
+          className='absolute inset-0 flex items-center justify-center'
         >
-          <div className='flex flex-col justify-between'>
-            {ProjectItems.map((data) => (
-              <Projects
-                name={data.name}
-                description={data.description}
-                url={data.url}
-                stack={data.stack}
-                img={data.img}
-              />
-            ))}
-          </div>
-        </div>
-      </Card>
-    </div>
+          <Card className='h-[95%] w-[95%]'>
+            <CardHeader onClick={toggleWorkVisible}>
+              <CardIcon>
+                <BsFileCodeFill />
+              </CardIcon>
+              <CardTitle>{title}</CardTitle>
+            </CardHeader>
+            <div
+              className='scrollbar flex h-full flex-col overflow-scroll text-base'
+              style={{ fontFamily: 'modeseven' }}
+            >
+              <div className='flex flex-col justify-between'>
+                {ProjectItems.map((data) => (
+                  <Projects
+                    name={data.name}
+                    description={data.description}
+                    url={data.url}
+                    stack={data.stack}
+                    img={data.img}
+                  />
+                ))}
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }

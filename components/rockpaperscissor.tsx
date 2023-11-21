@@ -5,6 +5,7 @@ import { Card, CardHeader, CardIcon, CardTitle } from '@/components/ui/card'
 import { Button } from './ui/button'
 import { CardProps } from '@/utils/constants'
 import { useModalStore } from '@/utils/State/modalstore'
+import { AnimatePresence, motion } from 'framer-motion'
 
 // Icons
 import { GiAbstract029 } from 'react-icons/gi'
@@ -28,7 +29,8 @@ export default function RockPaperScissor({ title }: CardProps) {
   const [cpuScore, setCpuScore] = useState(0)
   const [turns, setTurns] = useState(0)
 
-  const { toggleGameVisible } = useModalStore((state) => ({
+  const { gameVisible, toggleGameVisible } = useModalStore((state) => ({
+    gameVisible: state.gameVisible,
     toggleGameVisible: state.toggleGameVisible,
   }))
 
@@ -69,65 +71,89 @@ export default function RockPaperScissor({ title }: CardProps) {
   }
 
   return (
-    <div className='absolute inset-0 flex items-center justify-center'>
-      <Card className='relative h-[95%] w-[95%]'>
-        <CardHeader onClick={toggleGameVisible}>
-          <CardIcon>
-            <GiAbstract029 />
-          </CardIcon>
-          <CardTitle>{title}</CardTitle>
-        </CardHeader>
-        <div
-          className='flex flex-col text-center text-base'
-          style={{ fontFamily: 'modeseven' }}
+    <AnimatePresence>
+      {gameVisible && (
+        <motion.div
+          initial={{
+            scale: 0,
+            x: '0%',
+            y: '50%',
+            translateX: '-50%',
+            translateY: '-50%',
+          }}
+          animate={{ scale: 1, x: '50%', y: '50%' }}
+          exit={{
+            scale: 0,
+            x: '0%',
+            y: '50%',
+            translateX: '-50%',
+            translateY: '-50%',
+          }}
+          className='absolute inset-0 flex items-center justify-center'
         >
-          <div className='relative py-3'>
-            <h4 className='text-4xl'>
-              <span className='text-accent'>R</span>o
-              <span className='text-accent'>P</span>a
-              <span className='text-accent'>S</span>c
-            </h4>
-            <p className='text-[0.68rem]'>Rock.Paper.Scissors</p>
-            <div className='absolute right-0 top-0 p-4'>
-              <p>Turns: {turns}</p>
-              <span className='cursor-pointer p-1' onClick={() => resetStats()}>
-                Reset
-              </span>
+          <Card className='relative h-[75%] w-[75%]'>
+            <CardHeader onClick={toggleGameVisible}>
+              <CardIcon>
+                <GiAbstract029 />
+              </CardIcon>
+              <CardTitle>{title}</CardTitle>
+            </CardHeader>
+            <div
+              className='flex flex-col text-center text-base'
+              style={{ fontFamily: 'modeseven' }}
+            >
+              <div className='relative py-3'>
+                <h4 className='text-4xl'>
+                  <span className='text-accent'>R</span>o
+                  <span className='text-accent'>P</span>a
+                  <span className='text-accent'>S</span>c
+                </h4>
+                <p className='text-[0.68rem]'>Rock.Paper.Scissors</p>
+                <div className='absolute right-0 top-0 p-4'>
+                  <p>Turns: {turns}</p>
+                  <span
+                    className='cursor-pointer p-1'
+                    onClick={() => resetStats()}
+                  >
+                    Reset
+                  </span>
+                </div>
+              </div>
+              <div className='flex items-center py-10'>
+                <div className='flex w-full flex-col'>
+                  <span className='text-xl sm:text-3xl'>You</span>
+                  <span className='text-base text-accent sm:text-3xl'>
+                    {playerScore}
+                  </span>
+                </div>
+                <div className='flex w-full flex-col'>
+                  <span className='text-xl text-accent sm:text-4xl'>vs</span>
+                </div>
+                <div className='flex w-full flex-col'>
+                  <span className='text-xl sm:text-3xl'>CPU</span>
+                  <span className='text-base text-accent sm:text-3xl'>
+                    {cpuScore}
+                  </span>
+                </div>
+              </div>
+              <div className='flex h-28 flex-col items-center justify-center text-xl sm:h-40 sm:text-3xl'>
+                {result}
+              </div>
+              <div className='absolute bottom-0 flex h-40 w-full flex-col border-t border-accent/20 text-5xl sm:h-60 sm:flex-row'>
+                <Button size='full' onClick={() => playerMove('rock')}>
+                  <FaHandRock className='svg text-2xl sm:text-5xl' />
+                </Button>
+                <Button size='full' onClick={() => playerMove('paper')}>
+                  <FaHandPaper className='svg text-2xl sm:text-5xl' />
+                </Button>
+                <Button size='full' onClick={() => playerMove('scissors')}>
+                  <FaHandScissors className='svg rotate-90 transform text-2xl sm:text-5xl' />
+                </Button>
+              </div>
             </div>
-          </div>
-          <div className='flex items-center py-10'>
-            <div className='flex w-full flex-col'>
-              <span className='text-xl sm:text-3xl'>You</span>
-              <span className='text-base text-accent sm:text-3xl'>
-                {playerScore}
-              </span>
-            </div>
-            <div className='flex w-full flex-col'>
-              <span className='text-xl text-accent sm:text-4xl'>vs</span>
-            </div>
-            <div className='flex w-full flex-col'>
-              <span className='text-xl sm:text-3xl'>CPU</span>
-              <span className='text-base text-accent sm:text-3xl'>
-                {cpuScore}
-              </span>
-            </div>
-          </div>
-          <div className='flex h-28 flex-col items-center justify-center text-xl sm:h-40 sm:text-3xl'>
-            {result}
-          </div>
-          <div className='absolute bottom-0 flex h-40 w-full flex-col border-t border-accent/20 text-5xl sm:h-60 sm:flex-row'>
-            <Button size='full' onClick={() => playerMove('rock')}>
-              <FaHandRock className='svg text-2xl sm:text-5xl' />
-            </Button>
-            <Button size='full' onClick={() => playerMove('paper')}>
-              <FaHandPaper className='svg text-2xl sm:text-5xl' />
-            </Button>
-            <Button size='full' onClick={() => playerMove('scissors')}>
-              <FaHandScissors className='svg rotate-90 transform text-2xl sm:text-5xl' />
-            </Button>
-          </div>
-        </div>
-      </Card>
-    </div>
+          </Card>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }
