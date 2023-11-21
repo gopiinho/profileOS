@@ -45,16 +45,24 @@ export default function Contact({ title }: CardProps) {
           style={{ fontFamily: 'modeseven' }}
         >
           <Button size='full' className='text-3xl sm:text-5xl'>
-            twitter
+            <a href='https://twitter.com/gopiinho' target='_blank'>
+              twitter
+            </a>
           </Button>
           <Button size='full' className='text-3xl sm:text-5xl'>
-            github
+            <a href='https://github.com/igopib' target='_blank'>
+              github
+            </a>
           </Button>
           <Button size='full' className='text-3xl sm:text-5xl'>
-            discord
+            <a href='' target='_blank'>
+              discord
+            </a>
           </Button>
           <Button size='full' className='text-3xl sm:text-5xl'>
-            mail
+            <a href='mailto:gopinho@protonmail.com' target='_blank'>
+              mail
+            </a>
           </Button>
         </div>
       </Card>
