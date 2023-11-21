@@ -44,26 +44,38 @@ export default function Contact({ title }: CardProps) {
           className='flex h-[94%] flex-col overflow-hidden sm:h-[96%] xl:flex-row'
           style={{ fontFamily: 'modeseven' }}
         >
-          <Button size='full' className='text-3xl sm:text-5xl'>
-            <a href='https://twitter.com/gopiinho' target='_blank'>
+          <a
+            href='https://twitter.com/gopiinho'
+            target='_blank'
+            className='w-full'
+          >
+            <Button size='full' className='text-3xl sm:text-5xl'>
               twitter
-            </a>
-          </Button>
-          <Button size='full' className='text-3xl sm:text-5xl'>
-            <a href='https://github.com/igopib' target='_blank'>
+            </Button>
+          </a>
+          <a
+            href='https://github.com/igopib'
+            target='_blank'
+            className='w-full'
+          >
+            <Button size='full' className='text-3xl sm:text-5xl'>
               github
-            </a>
-          </Button>
-          <Button size='full' className='text-3xl sm:text-5xl'>
-            <a href='' target='_blank'>
+            </Button>
+          </a>
+          <a href='' target='_blank' className='w-full'>
+            <Button size='full' className='text-3xl sm:text-5xl'>
               discord
-            </a>
-          </Button>
-          <Button size='full' className='text-3xl sm:text-5xl'>
-            <a href='mailto:gopinho@protonmail.com' target='_blank'>
+            </Button>{' '}
+          </a>
+          <a
+            href='mailto:gopinho@protonmail.com'
+            target='_blank'
+            className='w-full'
+          >
+            <Button size='full' className='text-3xl sm:text-5xl'>
               mail
-            </a>
-          </Button>
+            </Button>{' '}
+          </a>
         </div>
       </Card>
     </motion.div>

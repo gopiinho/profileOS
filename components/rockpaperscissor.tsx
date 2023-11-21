@@ -75,7 +75,7 @@ export default function RockPaperScissor({ title }: CardProps) {
       initial={{
         scale: 0,
         x: '0%',
-        y: '70%',
+        y: '65%',
         translateX: '-50%',
         translateY: '-50%',
       }}
@@ -84,7 +84,7 @@ export default function RockPaperScissor({ title }: CardProps) {
       exit={{
         scale: 0,
         x: '0%',
-        y: '70%',
+        y: '65%',
         translateX: '-50%',
         translateY: '-50%',
       }}
