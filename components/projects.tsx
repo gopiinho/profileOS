@@ -9,6 +9,7 @@ export default function Projects({
   description,
   stack,
   url,
+  gurl,
   img,
 }: ProjectProps) {
   return (
@@ -19,7 +20,7 @@ export default function Projects({
         className='absolute inset-0 h-full w-full object-cover opacity-10 duration-200 group-hover:opacity-30'
       />
       <div className='z-10 flex w-full flex-col justify-between gap-4 sm:flex-row'>
-        <div className='flex flex-col lg:max-w-[40%]'>
+        <div className='flex flex-col lg:max-w-[50%]'>
           <span className='py-2 text-2xl text-accent sm:text-3xl'>{name}</span>
           <span>{description}</span>
           <span className='pt-4'>
@@ -31,11 +32,19 @@ export default function Projects({
             ))}
           </span>
         </div>
-        <div className='flex flex-col items-center justify-center'>
-          <Button variant='outline' size='lg'>
-            <a href={url}>
+        <div className='flex flex-col items-center justify-center gap-3'>
+          <Button variant='outline' size='lg' className='w-full'>
+            <a href={url} target='_blank'>
               <span className='flex w-full items-center gap-1 text-xl sm:text-3xl'>
                 visit
+                <MdArrowOutward />
+              </span>
+            </a>
+          </Button>
+          <Button variant='outline' size='lg' className='w-full'>
+            <a href={gurl} target='_blank'>
+              <span className='flex w-full items-center gap-1 text-xl sm:text-3xl'>
+                code
                 <MdArrowOutward />
               </span>
             </a>

@@ -6,6 +6,7 @@ import { Card, CardHeader, CardIcon, CardTitle } from '@/components/ui/card'
 import { CardProps } from '@/utils/constants'
 import { useTheme } from 'next-themes'
 import { useModalStore } from '@/utils/State/modalstore'
+import { motion } from 'framer-motion'
 
 // Icons
 import { GiAbstract029 } from 'react-icons/gi'
@@ -18,7 +19,25 @@ export default function About({ title }: CardProps) {
     toggleAboutVisible: state.toggleAboutVisible,
   }))
   return (
-    <div className='absolute inset-0 flex items-center justify-center'>
+    <motion.div
+      initial={{
+        scale: 0,
+        x: '0%',
+        y: '50%',
+        translateX: '-50%',
+        translateY: '-50%',
+      }}
+      transition={{ duration: 0.2 }}
+      animate={{ scale: 1, x: '50%', y: '50%' }}
+      exit={{
+        scale: 0,
+        x: '0%',
+        y: '50%',
+        translateX: '-50%',
+        translateY: '-50%',
+      }}
+      className='absolute inset-0 flex items-center justify-center'
+    >
       <Card className='h-[95%] w-[95%]'>
         <CardHeader onClick={toggleAboutVisible}>
           <CardIcon>
@@ -51,6 +70,6 @@ export default function About({ title }: CardProps) {
           <div className='p-4'></div>
         </div>
       </Card>
-    </div>
+    </motion.div>
   )
 }

@@ -6,6 +6,7 @@ import { useTheme } from 'next-themes'
 import { useModalStore } from '@/utils/State/modalstore'
 import Projects from './projects'
 import { ProjectProps } from '@/utils/constants'
+import { motion } from 'framer-motion'
 // Icons & Images
 import { BsFileCodeFill } from 'react-icons/bs'
 import enderApp from '@/public/app.png'
@@ -16,9 +17,9 @@ import profileOs from '@/public/profileos.png'
 const ProjectItems: ProjectProps[] = [
   {
     name: 'Ender Protocol - App',
-    description:
-      'Next.js app powered by rainbowkit & wagmi.sh to bring best defi. Now I want to test it using random text which will increase its area but I cannot tell of anything else.',
+    description: 'Dapp built from scratch using next.js and typescript. ',
     url: 'https://app.enderprotocol.io',
+    gurl: 'https://github.com/enderprotocol/enderprotocol-app',
     stack: ['Next.js', 'Typescript', 'Tailwindcss', 'Wagmi.sh', 'Rainbow Kit'],
     img: enderApp,
   },
@@ -27,6 +28,7 @@ const ProjectItems: ProjectProps[] = [
     description:
       'React app, styled by chakraui and smart contract integration with etherjs.',
     url: 'https://whimsical-kheer-5221bd.netlify.app/',
+    gurl: 'https://github.com/igopib/sibyl-access',
     stack: ['React', 'ChakraUi', 'Ethers.js'],
     img: sibyl,
   },
@@ -34,17 +36,37 @@ const ProjectItems: ProjectProps[] = [
     name: 'Ender Protocol',
     description: 'Landing page created with layouts and custom css.',
     url: 'https://enderprotocol.io',
+    gurl: 'https://github.com/enderprotocol/enderprotocol-fe',
     stack: ['Next.js', 'Tailwindcss', 'CSS'],
     img: ender,
   },
 ]
 
 export default function Work({ title }: CardProps) {
-  const { toggleWorkVisible } = useModalStore((state) => ({
+  const { workVisible, toggleWorkVisible } = useModalStore((state) => ({
+    workVisible: state.workVisible,
     toggleWorkVisible: state.toggleWorkVisible,
   }))
   return (
-    <div className='absolute inset-0 flex items-center justify-center animate-in fade-in zoom-out'>
+    <motion.div
+      initial={{
+        scale: 0,
+        x: '0%',
+        y: '5%',
+        translateX: '-50%',
+        translateY: '-50%',
+      }}
+      transition={{ duration: 0.2 }}
+      animate={{ scale: 1, x: '50%', y: '50%' }}
+      exit={{
+        scale: 0,
+        x: '0%',
+        y: '5%',
+        translateX: '-50%',
+        translateY: '-50%',
+      }}
+      className='absolute inset-0 flex items-center justify-center'
+    >
       <Card className='h-[95%] w-[95%]'>
         <CardHeader onClick={toggleWorkVisible}>
           <CardIcon>
@@ -62,6 +84,7 @@ export default function Work({ title }: CardProps) {
                 name={data.name}
                 description={data.description}
                 url={data.url}
+                gurl={data.gurl}
                 stack={data.stack}
                 img={data.img}
               />
@@ -69,6 +92,6 @@ export default function Work({ title }: CardProps) {
           </div>
         </div>
       </Card>
-    </div>
+    </motion.div>
   )
 }

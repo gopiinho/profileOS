@@ -11,5 +11,6 @@ export interface ProjectProps {
   description: string
   stack: string[]
   url: string
+  gurl: string
   img: StaticImageData
 }

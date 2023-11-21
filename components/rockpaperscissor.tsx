@@ -5,6 +5,7 @@ import { Card, CardHeader, CardIcon, CardTitle } from '@/components/ui/card'
 import { Button } from './ui/button'
 import { CardProps } from '@/utils/constants'
 import { useModalStore } from '@/utils/State/modalstore'
+import { AnimatePresence, motion } from 'framer-motion'
 
 // Icons
 import { GiAbstract029 } from 'react-icons/gi'
@@ -28,7 +29,8 @@ export default function RockPaperScissor({ title }: CardProps) {
   const [cpuScore, setCpuScore] = useState(0)
   const [turns, setTurns] = useState(0)
 
-  const { toggleGameVisible } = useModalStore((state) => ({
+  const { gameVisible, toggleGameVisible } = useModalStore((state) => ({
+    gameVisible: state.gameVisible,
     toggleGameVisible: state.toggleGameVisible,
   }))
 
@@ -69,7 +71,25 @@ export default function RockPaperScissor({ title }: CardProps) {
   }
 
   return (
-    <div className='absolute inset-0 flex items-center justify-center'>
+    <motion.div
+      initial={{
+        scale: 0,
+        x: '0%',
+        y: '70%',
+        translateX: '-50%',
+        translateY: '-50%',
+      }}
+      transition={{ duration: 0.2 }}
+      animate={{ scale: 1, x: '50%', y: '50%' }}
+      exit={{
+        scale: 0,
+        x: '0%',
+        y: '70%',
+        translateX: '-50%',
+        translateY: '-50%',
+      }}
+      className='absolute inset-0 flex items-center justify-center'
+    >
       <Card className='relative h-[95%] w-[95%]'>
         <CardHeader onClick={toggleGameVisible}>
           <CardIcon>
@@ -128,6 +148,6 @@ export default function RockPaperScissor({ title }: CardProps) {
           </div>
         </div>
       </Card>
-    </div>
+    </motion.div>
   )
 }

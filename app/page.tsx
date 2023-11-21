@@ -6,6 +6,7 @@ import About from '@/components/about'
 import RockPaperScissor from '@/components/rockpaperscissor'
 import { useModalStore } from '@/utils/State/modalstore'
 import Bar from '@/components/bar'
+import { AnimatePresence } from 'framer-motion'
 
 export default function Home() {
   const {
@@ -31,10 +32,18 @@ export default function Home() {
   return (
     <div className='flex h-full w-full flex-col'>
       <div className='relative flex h-full w-full items-center justify-center'>
-        {workVisible ? <Work title='Work' /> : null}
-        {aboutVisible ? <About title='About' /> : null}
-        {gameVisible ? <RockPaperScissor title='RoPaSc' /> : null}
-        {contactVisible ? <Contact title='Contact' /> : null}
+        <AnimatePresence>
+          {workVisible && <Work title='Work' />}
+        </AnimatePresence>
+        <AnimatePresence>
+          {aboutVisible && <About title='About' />}
+        </AnimatePresence>
+        <AnimatePresence>
+          {gameVisible && <RockPaperScissor title='RoPaSc' />}
+        </AnimatePresence>
+        <AnimatePresence>
+          {contactVisible && <Contact title='Contact' />}
+        </AnimatePresence>
       </div>
       <Bar />
     </div>
