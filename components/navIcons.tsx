@@ -12,7 +12,7 @@ export default function NavIcons({ icon, title = '', onClick }: IconProps) {
     <div
       onClick={onClick}
       draggable
-      className='font-cyber group hidden w-full cursor-pointer items-center justify-center text-center duration-300 hover:text-accent sm:flex'
+      className='group hidden w-full cursor-pointer select-none items-center justify-center text-center duration-300 hover:text-accent sm:flex'
     >
       <div className='flex flex-col items-center gap-2'>
         <span className='text-3xl'>{icon}</span>

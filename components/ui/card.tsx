@@ -10,7 +10,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      'border bg-background text-card-foreground shadow-[7px_7px] shadow-foreground/90 duration-300',
+      'flex flex-col border bg-background text-card-foreground shadow-[7px_7px] shadow-foreground',
       className
     )}
     {...props}
@@ -21,18 +21,20 @@ Card.displayName = 'Card'
 const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, children, ...props }, ref) => (
+>(({ className, onClick, children, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
-      'flex select-none flex-col space-y-1.5 bg-foreground text-background',
+      'flex select-none flex-col bg-foreground text-background',
       className
     )}
     {...props}
   >
     <div className='flex items-center justify-between border-b p-2'>
       <div className='flex items-center gap-1'>{children}</div>
-      <IoIosClose className='cursor-pointer text-2xl duration-200 hover:text-accent/80' />
+      <span onClick={onClick}>
+        <IoIosClose className='cursor-pointer text-2xl hover:text-accent/80 sm:text-2xl' />
+      </span>
     </div>
   </div>
 ))

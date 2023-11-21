@@ -13,8 +13,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 0 0% 48%;
+    --primary-foreground: 228 36% 60%;
 
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -46,8 +46,8 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary: 0 0% 58%;
+    --primary-foreground: 0 0% 0%;
 
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
@@ -80,6 +80,36 @@
   }
   a:hover {
     @apply hover:bg-accent/10;
+    text-decoration: underline;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .svg {
+    shape-rendering: crispEdges;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 9999px;
+    background: transparent;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 9999px;
+    border: solid transparent;
+    background-clip: padding-box;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var();
+  }
+
+  .scrollbar::-webkit-scrollbar:hover {
+    border: 0;
   }
 }
 
