@@ -38,36 +38,42 @@ export default function About({ title }: CardProps) {
       }}
       className='absolute inset-0 flex items-center justify-center'
     >
-      <Card className='h-[95%] w-[95%]'>
+      <Card className='about-bg h-[95%] w-[95%]'>
         <CardHeader onClick={toggleAboutVisible}>
           <CardIcon>
             <GiAbstract029 />
           </CardIcon>
           <CardTitle>{title}</CardTitle>
         </CardHeader>
+        <div className='flex h-10 w-full items-center justify-center bg-primary'>
+          <div className='z-10 flex h-6 w-[99%] items-center justify-start bg-foreground p-2 text-sm text-primary sm:text-base'>
+            <p>https://localhost:3000/about</p>
+          </div>
+        </div>
         <div
-          className='flex flex-col text-base'
-          style={{ fontFamily: 'modeseven' }}
+          className='mx-auto flex h-full w-full flex-col items-center bg-background p-3 text-center text-base sm:w-[80%] lg:w-[60%] lg:text-lg'
+          style={{ fontFamily: 'nota' }}
         >
-          <div className='flex flex-row justify-between p-4'>
+          <div className='font-bol flex flex-col py-4 text-4xl uppercase leading-none sm:py-6 sm:text-7xl'>
+            <p>About </p>
+            <p>Me</p>
+          </div>
+          <div className='p-4 font-extralight'>
             <p>
-              This website is an attempt to show my personality as a person and
-              a developer. <br />
-              Currently working at{' '}
-              <span className='text-accent duration-200 hover:underline'>
-                <Link href='https://enderprotocol.io'>ender protocol</Link>
-              </span>{' '}
-              building their webapp and frontends.
+              Hey, My name is Gurpreet, and first things first, thank you for
+              visiting this page. Makes me feel better about spending countless
+              hours just doing random stuff in here but as long as someone sees
+              it.
             </p>
-            <div className='flex h-28 w-28 shrink-0'>
+          </div>
+
+          {/* <div className='flex h-28 w-28 shrink-0'>
               {theme == 'light' ? (
                 <Image src={lightPic} alt='profile pic' />
               ) : (
                 <Image src={darkPic} alt='profile pic' />
               )}
-            </div>
-          </div>
-          <div className='p-4'></div>
+            </div> */}
         </div>
       </Card>
     </motion.div>
