@@ -23,8 +23,8 @@ const EthPrice = () => {
   return (
     <div className='absolute bottom-4 right-4 z-20 cursor-pointer text-xs duration-200 hover:text-accent'>
       {ethereumPrice ? (
-        <div className='flex items-center gap-2'>
-          <FaEthereum size={20} />
+        <div className='flex items-center'>
+          <FaEthereum size={20} className='pr-2' />$
           <AnimatedHeading>{ethereumPrice}</AnimatedHeading>
         </div>
       ) : (
