@@ -4,6 +4,7 @@ import NavIcons from './navIcons'
 import { MdContactMail } from 'react-icons/md'
 import { BsFileCodeFill } from 'react-icons/bs'
 import { GiAbstract029 } from 'react-icons/gi'
+import { ImProfile } from 'react-icons/im'
 import { IoNewspaper } from 'react-icons/io5'
 import { FaToolbox } from 'react-icons/fa'
 import { ModeToggle } from './ui/modetoggle'
@@ -17,11 +18,13 @@ export default function Navbar() {
     toggleContactVisible,
     toggleAboutVisible,
     toggleGameVisible,
+    toggleProfileVisible,
   } = useModalStore((state) => ({
     toggleWorkVisible: state.toggleWorkVisible,
     toggleContactVisible: state.toggleContactVisible,
     toggleAboutVisible: state.toggleAboutVisible,
     toggleGameVisible: state.toggleGameVisible,
+    toggleProfileVisible: state.toggleProfileVisible,
   }))
   return (
     <div className='z-20 flex flex-col justify-between gap-8'>
@@ -38,6 +41,11 @@ export default function Navbar() {
         >
           <NavIcons icon={<IoNewspaper />} title='resume' />
         </a>
+        <NavIcons
+          icon={<ImProfile />}
+          title='profile'
+          onClick={toggleProfileVisible}
+        />
         <NavIcons
           icon={<GiAbstract029 />}
           title='about'

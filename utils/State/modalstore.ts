@@ -9,6 +9,8 @@ type ModalStore = {
   toggleAboutVisible: () => void
   gameVisible: boolean
   toggleGameVisible: () => void
+  profileVisible: boolean
+  toggleProfileVisible: () => void
 }
 
 export const useModalStore = create<ModalStore>((set) => ({
@@ -24,4 +26,7 @@ export const useModalStore = create<ModalStore>((set) => ({
   gameVisible: false,
   toggleGameVisible: () =>
     set((state) => ({ gameVisible: !state.gameVisible })),
+  profileVisible: false,
+  toggleProfileVisible: () =>
+    set((state) => ({ profileVisible: !state.profileVisible })),
 }))
