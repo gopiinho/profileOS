@@ -1,4 +1,5 @@
 'use client'
+import Navbar from '@/components/navbar'
 import Work from '@/components/work'
 import Skills from '@/components/skills'
 import Contact from '@/components/contact'
@@ -36,25 +37,28 @@ export default function Home() {
   }))
 
   return (
-    <div className='flex h-full w-full flex-col'>
-      <div className='relative flex h-full w-full items-center justify-center'>
-        <AnimatePresence>
-          {workVisible && <Work title='Work' />}
-        </AnimatePresence>
-        <AnimatePresence>
-          {profileVisible && <Profile title='Profile' />}
-        </AnimatePresence>
-        <AnimatePresence>
-          {aboutVisible && <About title='About' />}
-        </AnimatePresence>
-        <AnimatePresence>
-          {gameVisible && <RockPaperScissor title='RoPaSc' />}
-        </AnimatePresence>
-        <AnimatePresence>
-          {contactVisible && <Contact title='Contact' />}
-        </AnimatePresence>
+    <div className='relative flex h-screen'>
+      <Navbar />
+      <div className='flex h-full w-full flex-col'>
+        <div className='relative flex h-full w-full items-center justify-center'>
+          <AnimatePresence>
+            {workVisible && <Work title='Work' />}
+          </AnimatePresence>
+          <AnimatePresence>
+            {profileVisible && <Profile title='Profile' />}
+          </AnimatePresence>
+          <AnimatePresence>
+            {aboutVisible && <About title='About' />}
+          </AnimatePresence>
+          <AnimatePresence>
+            {gameVisible && <RockPaperScissor title='RoPaSc' />}
+          </AnimatePresence>
+          <AnimatePresence>
+            {contactVisible && <Contact title='Contact' />}
+          </AnimatePresence>
+        </div>
+        <Bar />
       </div>
-      <Bar />
     </div>
   )
 }

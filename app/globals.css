@@ -112,6 +112,9 @@
   .scrollbar::-webkit-scrollbar:hover {
     border: 0;
   }
+  iframe {
+    @apply absolute left-0 top-0 h-full w-full;
+  }
 }
 
 @font-face {

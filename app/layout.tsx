@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { ThemeProvider } from '@/components/themeProvider'
 import './globals.css'
-import Navbar from '@/components/navbar'
 
 export const metadata: Metadata = {
   title: 'Gopinho - Profilev2',
@@ -25,10 +24,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className={`relative flex h-screen`}>
-            <Navbar />
-            {children}
-          </div>
+          {children}
         </ThemeProvider>
       </body>
     </html>

@@ -1,5 +1,6 @@
 'use client'
 import NavIcons from './navIcons'
+import Link from 'next/link'
 // Icons
 import { MdContactMail } from 'react-icons/md'
 import { BsFileCodeFill } from 'react-icons/bs'
@@ -35,12 +36,9 @@ export default function Navbar() {
           onClick={toggleWorkVisible}
         />
         <NavIcons icon={<FaToolbox />} title='skills' />
-        <a
-          href='https://docs.google.com/document/d/1JoViG2sGYfXkuTTqVE4wuCnBscf_bMHjTnDXhe01cVY/edit'
-          target='_blank'
-        >
+        <Link href='/resume' target='_blank'>
           <NavIcons icon={<IoNewspaper />} title='resume' />
-        </a>
+        </Link>
         <NavIcons
           icon={<ImProfile />}
           title='profile'
