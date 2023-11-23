@@ -80,10 +80,6 @@
     image-rendering: pixelated;
     background-image: var(--background-image);
   }
-  a:hover {
-    @apply hover:bg-accent/10;
-    text-decoration: underline;
-  }
 
   .about-bg {
     background-image: var(--background-about);

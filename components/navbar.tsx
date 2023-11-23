@@ -4,7 +4,7 @@ import NavIcons from './navIcons'
 import { MdContactMail } from 'react-icons/md'
 import { BsFileCodeFill } from 'react-icons/bs'
 import { GiAbstract029 } from 'react-icons/gi'
-import { TiThMenuOutline } from 'react-icons/ti'
+import { IoNewspaper } from 'react-icons/io5'
 import { FaToolbox } from 'react-icons/fa'
 import { ModeToggle } from './ui/modetoggle'
 import { FaGamepad } from 'react-icons/fa6'
@@ -32,7 +32,12 @@ export default function Navbar() {
           onClick={toggleWorkVisible}
         />
         <NavIcons icon={<FaToolbox />} title='skills' />
-        <NavIcons icon={<TiThMenuOutline />} title='menu' />
+        <a
+          href='https://docs.google.com/document/d/1JoViG2sGYfXkuTTqVE4wuCnBscf_bMHjTnDXhe01cVY/edit'
+          target='_blank'
+        >
+          <NavIcons icon={<IoNewspaper />} title='resume' />
+        </a>
         <NavIcons
           icon={<GiAbstract029 />}
           title='about'
