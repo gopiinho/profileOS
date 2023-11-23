@@ -40,11 +40,11 @@ export default function Profile({ title }: CardProps) {
           </CardIcon>
           <CardTitle>{title}</CardTitle>
         </CardHeader>
-        <div
-          className='flex h-full w-full flex-col items-center justify-center gap-2 px-3 py-6'
-          style={{ fontFamily: 'modeseven' }}
-        >
-          <div className='relative flex h-[60%] w-full flex-col overflow-hidden border border-foreground/50 bg-primary text-center'>
+        <div className='flex h-full w-full flex-col items-center justify-center gap-2 px-3 py-6'>
+          <div
+            style={{ fontFamily: 'modeseven' }}
+            className='relative flex h-[60%] w-full flex-col overflow-hidden border border-foreground/50 bg-primary text-center'
+          >
             <div className='mix-blend-luminosity'>
               <div className='absolute z-10 overflow-hidden text-[2.5rem] uppercase opacity-20 sm:text-6xl'>
                 <p>GurpreetSingh</p>
@@ -64,11 +64,27 @@ export default function Profile({ title }: CardProps) {
               <Image
                 src={picture}
                 alt='profile bg'
-                className='absolute bottom-0 z-20 h-full w-full object-cover'
+                className='no-drag absolute bottom-0 z-20 h-full w-full object-cover'
               />
             </div>
           </div>
-          <div className='h-[40%] w-full border border-foreground/50 bg-primary'></div>
+          <div className='flex h-[40%] w-full flex-col border border-foreground/50 bg-primary p-3 text-sm sm:text-base'>
+            <p className='text pb-2 text-center text-base uppercase sm:text-xl'>
+              Blockchain Developer
+            </p>
+            <div className='flex justify-between'>
+              <span>Name:</span>
+              <span>Gurpreet Singh</span>
+            </div>
+            <div className='flex justify-between'>
+              <span>From:</span>
+              <span>Winnipeg,MB</span>
+            </div>
+            <div className='flex justify-between'>
+              <span>Likes:</span>
+              <span>Gym,Games,Anime</span>
+            </div>
+          </div>
         </div>
       </Card>
     </motion.div>
