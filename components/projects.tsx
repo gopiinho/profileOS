@@ -25,9 +25,11 @@ export default function Projects({
           <span>{description}</span>
           <span className='pt-4'>
             {stack.map((data, index) => (
-              <span className='p-1 text-sm text-primary' key={index}>
+              <span
+                className='mr-1 cursor-pointer bg-foreground p-1 px-2 text-sm text-background hover:bg-background hover:text-foreground'
+                key={index}
+              >
                 {data}
-                {index < stack.length - 1 && ' •'}
               </span>
             ))}
           </span>

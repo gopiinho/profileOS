@@ -30,7 +30,7 @@ const ProjectItems: ProjectProps[] = [
       'React app, styled by chakraui and smart contract integration with etherjs. Focus being the theme of the world that nfts take place in.',
     url: 'https://whimsical-kheer-5221bd.netlify.app/',
     gurl: 'https://github.com/igopib/sibyl-access',
-    stack: ['Solidity', 'React', 'ChakraUi', 'Ethers.js'],
+    stack: ['Solidity', 'React', 'ChakraUI', 'Ethers.js'],
     img: sibyl,
   },
   {
