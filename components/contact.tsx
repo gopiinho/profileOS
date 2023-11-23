@@ -47,16 +47,16 @@ export default function Contact({ title }: CardProps) {
           <a
             href='https://twitter.com/gopiinho'
             target='_blank'
-            className='group h-full w-full hover:bg-[#1C9CEA]/50'
+            className='h-full w-full duration-200 hover:bg-[#1C9CEA]/50'
           >
-            <span className='group-hover:neon-bg flex h-full w-full items-center justify-center text-3xl sm:text-5xl'>
+            <span className='flex h-full w-full items-center justify-center text-3xl sm:text-5xl'>
               twitter
             </span>{' '}
           </a>
           <a
             href='https://github.com/igopib'
             target='_blank'
-            className='h-full w-full hover:bg-[#2EA043]/50'
+            className='h-full w-full duration-200 hover:bg-[#2EA043]/50'
           >
             <span className='flex h-full w-full items-center justify-center text-3xl sm:text-5xl'>
               github
@@ -65,7 +65,7 @@ export default function Contact({ title }: CardProps) {
           <a
             href=''
             target='_blank'
-            className='h-full w-full hover:bg-[#5560E9]/50'
+            className='h-full w-full duration-200 hover:bg-[#5560E9]/50'
           >
             <span className='flex h-full w-full items-center justify-center text-3xl sm:text-5xl'>
               discord
@@ -74,7 +74,7 @@ export default function Contact({ title }: CardProps) {
           <a
             href='mailto:gopinho@protonmail.com'
             target='_blank'
-            className='h-full w-full hover:bg-[#CD3B2F]/50'
+            className='h-full w-full duration-200 hover:bg-[#CD3B2F]/50'
           >
             <span className='flex h-full w-full items-center justify-center text-3xl sm:text-5xl'>
               mail
