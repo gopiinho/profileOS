@@ -102,7 +102,7 @@ export default function RockPaperScissor({ title }: CardProps) {
           style={{ fontFamily: 'modeseven' }}
         >
           <div className='relative py-3'>
-            <h4 className='text-4xl'>
+            <h4 className='text-4xl sm:text-8xl'>
               <span className='text-accent'>R</span>o
               <span className='text-accent'>P</span>a
               <span className='text-accent'>S</span>c
