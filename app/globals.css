@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 0 0% 48%;
+    --primary: 0 0% 79%;
     --primary-foreground: 228 36% 60%;
 
     --secondary: 240 4.8% 95.9%;
@@ -47,7 +47,7 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 58%;
+    --primary: 0 2% 9%;
     --primary-foreground: 0 0% 0%;
 
     --secondary: 240 3.7% 15.9%;
@@ -77,7 +77,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    image-rendering: pixelated;
     background-image: var(--background-image);
   }
 
