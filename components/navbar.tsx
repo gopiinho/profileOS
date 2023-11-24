@@ -20,30 +20,36 @@ export default function Navbar() {
     toggleAboutVisible,
     toggleGameVisible,
     toggleProfileVisible,
+    toggleSkillsVisible,
   } = useModalStore((state) => ({
     toggleWorkVisible: state.toggleWorkVisible,
     toggleContactVisible: state.toggleContactVisible,
     toggleAboutVisible: state.toggleAboutVisible,
     toggleGameVisible: state.toggleGameVisible,
     toggleProfileVisible: state.toggleProfileVisible,
+    toggleSkillsVisible: state.toggleSkillsVisible,
   }))
   return (
     <div className='z-20 flex flex-col justify-between gap-8'>
-      <div className='flex select-none flex-col items-center justify-between gap-8 p-2 pt-5'>
-        <NavIcons
-          icon={<BsFileCodeFill />}
-          title='work'
-          onClick={toggleWorkVisible}
-        />
-        <NavIcons icon={<FaToolbox />} title='skills' />
-        <Link href='/resume' target='_blank'>
-          <NavIcons icon={<IoNewspaper />} title='resume' />
-        </Link>
+      <div className='flex select-none flex-col items-center justify-between gap-5 p-2 pt-5 sm:gap-8'>
         <NavIcons
           icon={<ImProfile />}
           title='profile'
           onClick={toggleProfileVisible}
         />
+        <NavIcons
+          icon={<BsFileCodeFill />}
+          title='work'
+          onClick={toggleWorkVisible}
+        />
+        <NavIcons
+          icon={<FaToolbox />}
+          title='skills'
+          onClick={toggleSkillsVisible}
+        />
+        <Link href='/resume' target='_blank'>
+          <NavIcons icon={<IoNewspaper />} title='resume' />
+        </Link>
         <NavIcons
           icon={<GiAbstract029 />}
           title='about'
@@ -60,7 +66,7 @@ export default function Navbar() {
           onClick={toggleGameVisible}
         />
       </div>
-      <div className='flex items-center justify-center p-2 pb-5'>
+      <div className='flex items-center justify-center p-2 pb-2 sm:pb-3'>
         <ModeToggle />
       </div>
     </div>

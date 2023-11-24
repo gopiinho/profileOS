@@ -9,7 +9,6 @@ import RockPaperScissor from '@/components/rockpaperscissor'
 import { useModalStore } from '@/utils/State/modalstore'
 import Bar from '@/components/bar'
 import { AnimatePresence } from 'framer-motion'
-import { profile } from 'console'
 
 export default function Home() {
   const {
@@ -23,6 +22,8 @@ export default function Home() {
     gameVisible,
     profileVisible,
     toggleProfileVisible,
+    skillsVisible,
+    toggleSkillsVisible,
   } = useModalStore((state) => ({
     workVisible: state.workVisible,
     toggleWorkVisible: state.toggleWorkVisible,
@@ -34,6 +35,8 @@ export default function Home() {
     toggleGameVisible: state.toggleGameVisible,
     profileVisible: state.profileVisible,
     toggleProfileVisible: state.toggleGameVisible,
+    skillsVisible: state.skillsVisible,
+    toggleSkillsVisible: state.toggleSkillsVisible,
   }))
 
   return (
@@ -43,6 +46,9 @@ export default function Home() {
         <div className='relative flex h-full w-full items-center justify-center'>
           <AnimatePresence>
             {workVisible && <Work title='Work' />}
+          </AnimatePresence>
+          <AnimatePresence>
+            {skillsVisible && <Skills title='Skills' />}
           </AnimatePresence>
           <AnimatePresence>
             {profileVisible && <Profile title='Profile' />}
