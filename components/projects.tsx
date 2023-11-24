@@ -21,12 +21,14 @@ export default function Projects({
       />
       <div className='z-10 flex w-full flex-col justify-between gap-4 sm:flex-row'>
         <div className='flex flex-col lg:max-w-[50%]'>
-          <span className='py-2 text-2xl text-accent sm:text-3xl'>{name}</span>
+          <span className='py-2 text-2xl font-semibold uppercase text-accent sm:text-3xl'>
+            {name}
+          </span>
           <span>{description}</span>
           <span className='pt-4'>
             {stack.map((data, index) => (
               <span
-                className='mr-1 cursor-pointer bg-foreground p-1 px-2 text-sm text-background hover:bg-background hover:text-foreground'
+                className='mr-1 cursor-pointer bg-foreground/90 p-1 px-2 text-sm text-background hover:bg-background hover:text-foreground'
                 key={index}
               >
                 {data}

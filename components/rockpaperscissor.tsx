@@ -24,7 +24,7 @@ enum Result {
 const choices = ['rock', 'paper', 'scissors']
 
 export default function RockPaperScissor({ title }: CardProps) {
-  const [result, setResult] = useState('Pick')
+  const [result, setResult] = useState('Pick a Move')
   const [playerScore, setPlayerScore] = useState(0)
   const [cpuScore, setCpuScore] = useState(0)
   const [turns, setTurns] = useState(0)
@@ -102,7 +102,7 @@ export default function RockPaperScissor({ title }: CardProps) {
           style={{ fontFamily: 'modeseven' }}
         >
           <div className='relative py-3'>
-            <h4 className='text-4xl sm:text-8xl'>
+            <h4 className='text-4xl font-extrabold sm:text-8xl'>
               <span className='text-accent'>R</span>o
               <span className='text-accent'>P</span>a
               <span className='text-accent'>S</span>c

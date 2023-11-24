@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 51 24% 95%;
     --foreground: 240 10% 3.9%;
 
     --card: 0 0% 100%;
@@ -39,7 +39,7 @@
 
   .dark {
     --background: 0 8% 3%;
-    --foreground: 0 0% 98%;
+    --foreground: 51 24% 95%;
 
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -132,5 +132,5 @@
 }
 @font-face {
   font-family: 'nota';
-  src: url('../public/fonts/nota.ttf') format('truetype');
+  src: url('../public/fonts/nota.ttf') format('opentype');
 }

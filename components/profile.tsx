@@ -18,7 +18,7 @@ export default function Profile({ title }: CardProps) {
       initial={{
         scale: 0,
         x: '0%',
-        y: '45%',
+        y: '5%',
         translateX: '-50%',
         translateY: '-50%',
       }}
@@ -27,13 +27,13 @@ export default function Profile({ title }: CardProps) {
       exit={{
         scale: 0,
         x: '0%',
-        y: '45%',
+        y: '5%',
         translateX: '-50%',
         translateY: '-50%',
       }}
       className='absolute inset-0 flex items-center justify-center'
     >
-      <Card className='h-[80%] w-[95%] sm:w-[450px]'>
+      <Card className='h-[90%] w-[95%] sm:h-[80%] sm:w-[450px]'>
         <CardHeader onClick={toggleProfileVisible}>
           <CardIcon>
             <GiAbstract029 />
@@ -46,7 +46,7 @@ export default function Profile({ title }: CardProps) {
             className='relative flex h-[60%] w-full flex-col overflow-hidden border border-foreground/50 bg-primary text-center'
           >
             <div className='mix-blend-luminosity'>
-              <div className='absolute z-10 overflow-hidden text-[2.5rem] uppercase opacity-20 sm:text-6xl'>
+              <div className='absolute z-10 overflow-hidden text-[2.5rem] font-bold uppercase opacity-20 sm:text-6xl'>
                 <p>GurpreetSingh</p>
                 <p>nghGurpreetSi</p>
                 <p>GurpreetSingh</p>
@@ -68,21 +68,26 @@ export default function Profile({ title }: CardProps) {
               />
             </div>
           </div>
-          <div className='flex h-[40%] w-full flex-col border border-foreground/50 bg-primary p-3 text-sm sm:text-base'>
-            <p className='text pb-2 text-center text-base uppercase sm:text-xl'>
+          <div className='flex h-[40%] w-full flex-col border border-foreground/50 bg-primary p-3 text-xs sm:text-base'>
+            <p
+              className='text pb-2 text-center text-base font-bold uppercase sm:text-xl'
+              style={{ fontFamily: 'modeseven' }}
+            >
               Blockchain Developer
             </p>
-            <div className='flex justify-between'>
-              <span>Name:</span>
-              <span>Gurpreet Singh</span>
-            </div>
-            <div className='flex justify-between'>
-              <span>From:</span>
-              <span>Winnipeg,MB</span>
-            </div>
-            <div className='flex justify-between'>
-              <span>Likes:</span>
-              <span>Gym,Games,Anime</span>
+            <div className='flex flex-col gap-2'>
+              <div className='flex justify-between'>
+                <span>Name:</span>
+                <span>Gurpreet Singh</span>
+              </div>
+              <div className='flex justify-between'>
+                <span>From:</span>
+                <span>Winnipeg,MB</span>
+              </div>
+              <div className='flex justify-between'>
+                <span>Likes:</span>
+                <span>Typescript, Solidity</span>
+              </div>
             </div>
           </div>
         </div>

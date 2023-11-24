@@ -41,7 +41,7 @@ export default function Contact({ title }: CardProps) {
           <CardTitle>{title}</CardTitle>
         </CardHeader>
         <div
-          className='flex h-[94%] flex-col overflow-hidden sm:h-[96%] xl:flex-row'
+          className='flex h-[94%] flex-col overflow-hidden font-bold sm:h-[96%] xl:flex-row'
           style={{ fontFamily: 'modeseven' }}
         >
           <a
