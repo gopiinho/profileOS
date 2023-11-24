@@ -29,7 +29,7 @@ export default function Skills({ title }: CardProps) {
       }}
       className='absolute inset-0 flex items-center justify-center'
     >
-      <Card className='h-[95%] w-[95%] sm:h-[60%] sm:w-[60%]'>
+      <Card className='h-[95%] w-[95%] sm:h-[70%] sm:w-[60%]'>
         <CardHeader onClick={toggleSkillsVisible}>
           <CardIcon>
             <FaToolbox />

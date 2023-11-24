@@ -51,29 +51,15 @@ export default function About({ title }: CardProps) {
           </div>
         </div>
         <div
-          className='mx-auto flex h-full w-full flex-col items-center bg-background p-3 text-center text-base sm:w-[80%] lg:w-[60%] lg:text-lg'
-          style={{ fontFamily: 'nota' }}
+          className='mx-auto flex h-full w-full flex-col p-3 text-base text-foreground sm:w-[80%] lg:w-[60%] lg:text-lg'
+          style={{ fontFamily: 'archivo' }}
         >
           <div className='font-bol flex flex-col py-4 text-4xl uppercase leading-none sm:py-6 sm:text-7xl'>
-            <p>About </p>
-            <p>Me</p>
+            <p>Heyy</p>
           </div>
-          <div className='p-4 font-extralight'>
-            <p>
-              Hey, My name is Gurpreet, and first things first, thank you for
-              visiting this page. Makes me feel better about spending countless
-              hours just doing random stuff in here but as long as someone sees
-              it.
-            </p>
+          <div className='p-4'>
+            <p>I'm Gurpreet </p>
           </div>
-
-          {/* <div className='flex h-28 w-28 shrink-0'>
-              {theme == 'light' ? (
-                <Image src={lightPic} alt='profile pic' />
-              ) : (
-                <Image src={darkPic} alt='profile pic' />
-              )}
-            </div> */}
         </div>
       </Card>
     </motion.div>
