@@ -113,47 +113,48 @@ export default function Skills({ title }: CardProps) {
                 </div>
               </div>
             </div>
-            <div className='w-full border border-primary p-2'>
-              <div
-                className='py-2 text-xl font-semibold uppercase sm:py-3 sm:text-2xl xl:text-3xl'
-                style={{ fontFamily: 'modeseven' }}
-              >
-                Dev<span className='text-accent'> T</span>ools
+            <div className='flex w-full flex-col justify-between border border-primary p-2'>
+              <div>
+                <div
+                  className='py-2 text-xl font-semibold uppercase sm:py-3 sm:text-2xl xl:text-3xl'
+                  style={{ fontFamily: 'modeseven' }}
+                >
+                  Dev<span className='text-accent'> T</span>ools
+                </div>
+                <div className='grid gap-2'>
+                  <div className='bg-primary p-2'>
+                    <div className='text-lg font-semibold uppercase'>
+                      Management
+                    </div>
+                    <div className='ml-3 grid'>
+                      <span>-Git & Github</span>
+                      <span>-Jira / Slack</span>
+                    </div>
+                  </div>
+                  <div className='bg-primary p-2'>
+                    <div className='text-lg font-semibold uppercase'>
+                      Deployments
+                    </div>
+                    <div className='ml-3 grid'>
+                      <span>-Vercel / Netlify</span>
+                      <span>-AWS / Azure</span>
+                    </div>
+                  </div>
+                  <div className='bg-primary p-2 '>
+                    <div className='text-lg font-semibold uppercase'>
+                      Testing
+                    </div>
+                    <div className='ml-3 grid'>
+                      <span>-Mocha</span>
+                      <span>-Foundry</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className='grid gap-2'>
-                <div className='bg-primary p-2'>
-                  <div className='text-lg font-semibold uppercase'>
-                    Management
-                  </div>
-                  <div className='ml-3 grid'>
-                    <span>-Git & Github</span>
-                    <span>-Jira / Slack</span>
-                  </div>
-                </div>
-                <div className='bg-primary p-2'>
-                  <div className='text-lg font-semibold uppercase'>
-                    Deployments
-                  </div>
-                  <div className='ml-3 grid'>
-                    <span>-Vercel / Netlify</span>
-                    <span>-AWS / Azure</span>
-                  </div>
-                </div>
-                <div className='bg-primary p-2'>
-                  <div className='text-lg font-semibold uppercase'>Testing</div>
-                  <div className='ml-3 grid'>
-                    <span>-Mocha</span>
-                    <span>-Foundry</span>
-                  </div>
-                </div>
-              </div>
+              <p className='p-1 text-[0.6rem]'>
+                Ability to always learn and adapt.
+              </p>
             </div>
-          </div>
-          <div className='w-full border border-primary p-2 text-[0.6rem] sm:text-xs'>
-            <p>
-              Note: This is only my preferred tech stack, and I believe in
-              adaptability
-            </p>
           </div>
         </div>
       </Card>
