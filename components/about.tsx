@@ -21,7 +21,7 @@ export default function About({ title }: CardProps) {
       initial={{
         scale: 0,
         x: '0%',
-        y: '50%',
+        y: '45%',
         translateX: '-50%',
         translateY: '-50%',
       }}
@@ -30,7 +30,7 @@ export default function About({ title }: CardProps) {
       exit={{
         scale: 0,
         x: '0%',
-        y: '50%',
+        y: '45%',
         translateX: '-50%',
         translateY: '-50%',
       }}

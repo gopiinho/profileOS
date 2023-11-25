@@ -47,9 +47,6 @@ export default function Navbar() {
           title='skills'
           onClick={toggleSkillsVisible}
         />
-        <Link href='/resume' target='_blank'>
-          <NavIcons icon={<IoNewspaper />} title='resume' />
-        </Link>
         <NavIcons
           icon={<GiAbstract029 />}
           title='about'
@@ -65,6 +62,9 @@ export default function Navbar() {
           title='ropasc'
           onClick={toggleGameVisible}
         />
+        <Link href='/resume' target='_blank'>
+          <NavIcons icon={<IoNewspaper />} title='resume' />
+        </Link>
       </div>
       <div className='flex items-center justify-center p-2 pb-2 sm:pb-3'>
         <ModeToggle />
