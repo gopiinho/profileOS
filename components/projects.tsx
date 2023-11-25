@@ -21,7 +21,7 @@ export default function Projects({
       />
       <div className='z-10 flex w-full flex-col justify-between gap-4 sm:flex-row'>
         <div className='flex flex-col lg:max-w-[50%]'>
-          <span className='py-2 text-2xl font-semibold uppercase text-accent sm:text-3xl'>
+          <span className='gradient py-2 text-2xl font-semibold uppercase sm:text-3xl'>
             {name}
           </span>
           <span>{description}</span>

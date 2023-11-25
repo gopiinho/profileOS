@@ -43,7 +43,8 @@ export default function Skills({ title }: CardProps) {
                 className='py-2 text-xl font-semibold uppercase sm:py-3 sm:text-2xl xl:text-3xl'
                 style={{ fontFamily: 'modeseven' }}
               >
-                <span className='text-accent'>B</span>lockchain
+                <span className='text-2xl text-accent xl:text-4xl'>B</span>
+                lockchain
               </div>
               <div className='grid gap-2'>
                 <div className='bg-primary p-2'>
@@ -81,7 +82,8 @@ export default function Skills({ title }: CardProps) {
                 className='py-2 text-xl font-semibold uppercase sm:py-3 sm:text-2xl xl:text-3xl'
                 style={{ fontFamily: 'modeseven' }}
               >
-                Web<span className='text-accent'>A</span>pps
+                Web<span className='text-2xl text-accent xl:text-4xl'>A</span>
+                pps
               </div>
               <div className='grid gap-2'>
                 <div className='bg-primary p-2'>
@@ -119,7 +121,9 @@ export default function Skills({ title }: CardProps) {
                   className='py-2 text-xl font-semibold uppercase sm:py-3 sm:text-2xl xl:text-3xl'
                   style={{ fontFamily: 'modeseven' }}
                 >
-                  Dev<span className='text-accent'> T</span>ools
+                  Dev
+                  <span className='text-2xl text-accent xl:text-4xl'>T</span>
+                  ools
                 </div>
                 <div className='grid gap-2'>
                   <div className='bg-primary p-2'>

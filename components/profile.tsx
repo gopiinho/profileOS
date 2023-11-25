@@ -70,23 +70,27 @@ export default function Profile({ title }: CardProps) {
           </div>
           <div className='flex h-[40%] w-full flex-col border border-foreground/50 bg-primary p-3 text-xs sm:text-base'>
             <p
-              className='text pb-2 text-center text-base font-bold uppercase sm:text-xl'
+              className='text-shadow gradient pb-2 text-center text-xl font-bold uppercase sm:text-2xl'
               style={{ fontFamily: 'modeseven' }}
             >
               Blockchain Developer
             </p>
             <div className='flex flex-col gap-2'>
-              <div className='flex justify-between'>
+              <div className='flex justify-between text-right'>
                 <span>Name:</span>
                 <span>Gurpreet Singh</span>
               </div>
-              <div className='flex justify-between'>
+              <div className='flex justify-between text-right'>
                 <span>From:</span>
                 <span>Winnipeg,MB</span>
               </div>
-              <div className='flex justify-between'>
+              <div className='flex justify-between text-right'>
                 <span>Likes:</span>
                 <span>Typescript, Solidity</span>
+              </div>
+              <div className='flex justify-between text-right'>
+                <span>Cons:</span>
+                <span>Would give up CSS before tailwind</span>
               </div>
             </div>
           </div>
