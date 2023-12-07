@@ -63,12 +63,12 @@ export default function Contact({ title }: CardProps) {
             </span>
           </a>
           <a
-            href=''
+            href='https://www.linkedin.com/in/gopinho/'
             target='_blank'
             className='h-full w-full duration-200 hover:bg-[#5560E9]/50'
           >
             <span className='flex h-full w-full items-center justify-center text-3xl sm:text-5xl'>
-              discord
+              linkedIn
             </span>{' '}
           </a>
           <a
