@@ -14,8 +14,8 @@ export default function NavIcons({ icon, title = '', onClick }: IconProps) {
       className='group w-full cursor-pointer select-none items-center justify-center text-center duration-300 hover:text-accent sm:flex'
     >
       <div className='flex flex-col items-center gap-2'>
-        <span className='text-xl sm:text-3xl'>{icon}</span>
-        <span className='text-[0.6rem] group-hover:bg-accent/10 sm:text-base'>
+        <span className='text-xl sm:text-2xl'>{icon}</span>
+        <span className='text-[0.6rem] group-hover:bg-accent/10 sm:text-sm'>
           <AnimatedHeading>{title}</AnimatedHeading>
         </span>
       </div>
