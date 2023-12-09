@@ -13,6 +13,10 @@ type ModalStore = {
   toggleProfileVisible: () => void
   skillsVisible: boolean
   toggleSkillsVisible: () => void
+  tipjarVisible: boolean
+  toggleTipjarVisible: () => void
+  walletOptionsVisible: boolean
+  toggleWalletOptionsVisible: () => void
 }
 
 export const useModalStore = create<ModalStore>((set) => ({
@@ -34,4 +38,10 @@ export const useModalStore = create<ModalStore>((set) => ({
   skillsVisible: false,
   toggleSkillsVisible: () =>
     set((state) => ({ skillsVisible: !state.skillsVisible })),
+  tipjarVisible: false,
+  toggleTipjarVisible: () =>
+    set((state) => ({ tipjarVisible: !state.tipjarVisible })),
+  walletOptionsVisible: true,
+  toggleWalletOptionsVisible: () =>
+    set((state) => ({ walletOptionsVisible: !state.walletOptionsVisible })),
 }))

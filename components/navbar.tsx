@@ -7,7 +7,7 @@ import { BsFileCodeFill } from 'react-icons/bs'
 import { GiAbstract029 } from 'react-icons/gi'
 import { ImProfile } from 'react-icons/im'
 import { IoNewspaper } from 'react-icons/io5'
-import { FaToolbox } from 'react-icons/fa'
+import { FaToolbox, FaPiggyBank } from 'react-icons/fa'
 import { ModeToggle } from './ui/modetoggle'
 import { FaGamepad } from 'react-icons/fa6'
 
@@ -21,6 +21,7 @@ export default function Navbar() {
     toggleGameVisible,
     toggleProfileVisible,
     toggleSkillsVisible,
+    toggleTipjarVisible,
   } = useModalStore((state) => ({
     toggleWorkVisible: state.toggleWorkVisible,
     toggleContactVisible: state.toggleContactVisible,
@@ -28,6 +29,7 @@ export default function Navbar() {
     toggleGameVisible: state.toggleGameVisible,
     toggleProfileVisible: state.toggleProfileVisible,
     toggleSkillsVisible: state.toggleSkillsVisible,
+    toggleTipjarVisible: state.toggleTipjarVisible,
   }))
   return (
     <div className='z-20 flex flex-col justify-between gap-8'>
@@ -62,6 +64,12 @@ export default function Navbar() {
           title='ropasc'
           onClick={toggleGameVisible}
         />
+        <NavIcons
+          icon={<FaPiggyBank />}
+          title='tipjar'
+          onClick={toggleTipjarVisible}
+        />
+
         <Link href='/resume' target='_blank'>
           <NavIcons icon={<IoNewspaper />} title='resume' />
         </Link>

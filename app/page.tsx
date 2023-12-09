@@ -6,6 +6,7 @@ import Contact from '@/components/contact'
 import About from '@/components/about'
 import Profile from '@/components/profile'
 import RockPaperScissor from '@/components/rockpaperscissor'
+import TipJar from '@/components/Tipjar/tipjar'
 import { useModalStore } from '@/utils/State/modalstore'
 import Bar from '@/components/bar'
 import { AnimatePresence } from 'framer-motion'
@@ -24,6 +25,8 @@ export default function Home() {
     toggleProfileVisible,
     skillsVisible,
     toggleSkillsVisible,
+    tipjarVisible,
+    toggleTipjarVisible,
   } = useModalStore((state) => ({
     workVisible: state.workVisible,
     toggleWorkVisible: state.toggleWorkVisible,
@@ -37,6 +40,8 @@ export default function Home() {
     toggleProfileVisible: state.toggleGameVisible,
     skillsVisible: state.skillsVisible,
     toggleSkillsVisible: state.toggleSkillsVisible,
+    tipjarVisible: state.tipjarVisible,
+    toggleTipjarVisible: state.toggleTipjarVisible,
   }))
 
   return (
@@ -61,6 +66,9 @@ export default function Home() {
           </AnimatePresence>
           <AnimatePresence>
             {contactVisible && <Contact title='Contact' />}
+          </AnimatePresence>
+          <AnimatePresence>
+            {tipjarVisible && <TipJar title='TipJar' />}
           </AnimatePresence>
         </div>
         <Bar />
