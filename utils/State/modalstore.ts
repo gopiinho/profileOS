@@ -41,7 +41,7 @@ export const useModalStore = create<ModalStore>((set) => ({
   tipjarVisible: false,
   toggleTipjarVisible: () =>
     set((state) => ({ tipjarVisible: !state.tipjarVisible })),
-  walletOptionsVisible: true,
+  walletOptionsVisible: false,
   toggleWalletOptionsVisible: () =>
     set((state) => ({ walletOptionsVisible: !state.walletOptionsVisible })),
 }))

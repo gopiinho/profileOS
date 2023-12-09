@@ -41,7 +41,7 @@ export default function TipJar({ title }: CardProps) {
       }}
       className='absolute inset-0 flex items-center justify-center'
     >
-      <Card className='h-[95%] w-[95%] sm:h-[80%] sm:w-[70%]'>
+      <Card className='relative h-[95%] w-[95%] sm:h-[80%] sm:w-[70%]'>
         <CardHeader onClick={toggleTipjarVisible}>
           <CardIcon>
             <FaPiggyBank />
