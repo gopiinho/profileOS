@@ -92,6 +92,12 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .gradient-bg {
+    background-size: 300%;
+    background-image: var(--gradient-background);
+    animation: bg-animation 1s infinite;
+  }
   @keyframes bg-animation {
     0% {
       background-position: left;
@@ -147,6 +153,20 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+  }
+}
+
+input {
+  @apply w-full appearance-none border-0 bg-background p-2 text-left text-lg text-foreground outline-0 sm:text-xl;
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* For Firefox */
+  &[type='number'] {
+    -moz-appearance: textfield;
   }
 }
 
