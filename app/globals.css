@@ -96,7 +96,7 @@
   .gradient-bg {
     background-size: 300%;
     background-image: var(--gradient-background);
-    animation: bg-animation 1s infinite;
+    animation: bg-animation 3s infinite;
   }
   @keyframes bg-animation {
     0% {
