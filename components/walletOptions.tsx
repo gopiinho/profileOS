@@ -34,7 +34,7 @@ export function WalletOptions() {
           disabled={!connector.ready}
           key={connector.id}
           onClick={() => connect({ connector })}
-          className='h-12 w-full border-b border-foreground bg-background text-foreground duration-200 hover:text-accent'
+          className='h-12 w-full border-b border-foreground bg-background/90 text-foreground duration-200 hover:bg-background hover:text-accent'
         >
           {connector.name}
         </button>

@@ -23,7 +23,7 @@ export default function MiniNav() {
 
   return (
     <div className='flex h-14 items-center justify-between border-b border-foreground p-4'>
-      <span className='gradient select-none text-lg font-black sm:text-4xl'>
+      <span className='gradient select-none px-1 text-lg font-black sm:text-4xl'>
         TIPJAR ETH
       </span>
       {isConnected ? (
