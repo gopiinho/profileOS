@@ -30,7 +30,7 @@ export default function MiniNav() {
         <Button
           className='gap-2 text-xs hover:bg-foreground/70 sm:text-base'
           size={'sm'}
-          variant={'wallet'}
+          variant={'gradient'}
           onClick={() => disconnect()}
         >
           <FaEthereum />
@@ -40,7 +40,7 @@ export default function MiniNav() {
         <Button
           className='gap-2 text-xs hover:bg-foreground/70 sm:text-base'
           size={'sm'}
-          variant={'wallet'}
+          variant={'gradient'}
           onClick={toggleWalletOptionsVisible}
         >
           <IoWallet />
