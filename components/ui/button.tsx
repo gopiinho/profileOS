@@ -17,6 +17,8 @@ const buttonVariants = cva(
           'border border-foreground/50 hover:border-accent duration-200 bg-background hover:bg-accent hover:text-accent-foreground',
         threeD:
           'hover:gradient-bg mt-3 border border-accent/50 bg-background text-xl font-black uppercase text-foreground shadow-foreground transition-all duration-200 hover:translate-y-[-4px] hover:border-accent hover:text-background/90 hover:shadow-[0px_4px_0px_background] active:translate-x-[0px] active:translate-y-[0px] active:text-accent active:shadow-none',
+        threeDnormal:
+          'mt-3 border border-accent/50 bg-background text-xl font-black uppercase text-foreground shadow-foreground transition-all duration-200  hover:border-accent hover:text-accent/90',
         gradient:
           'hover:gradient-bg border border-foreground bg-background text-xl font-black uppercase text-foreground shadow-foreground transition-all duration-200  hover:border-accent hover:text-background/90 active:text-accent active:shadow-none',
         secondary:
