@@ -3,6 +3,7 @@ import { useContractRead, Address } from 'wagmi'
 import { formatEther, parseGwei } from 'viem'
 import tipjarABI from '@/utils/Abis/tipjarAbi.json'
 import { tipjarContractAddress } from '@/utils/constants'
+import { formatDateFromTimestamp } from '@/utils/utils'
 
 interface TipProps {
   from: Address
@@ -27,11 +28,9 @@ export default function Alltips() {
 
   useEffect(() => {
     let isMounted = true
-
     if (data && Array.isArray(data) && isMounted) {
       setAllTipsData(data)
     }
-
     return () => {
       isMounted = false
     }
@@ -45,15 +44,15 @@ export default function Alltips() {
       {isLoading ? (
         <div className='mx-auto h-28 w-full animate-pulse bg-foreground px-3 py-4 text-background sm:px-8 lg:w-[40%]'></div>
       ) : (
-        <div className='flex flex-col-reverse gap-3'>
+        <div className='mb-28 flex flex-col-reverse gap-3 text-sm sm:text-base'>
           {memoizedTipsData.map((tip) => (
-            <div className='mx-auto w-full bg-foreground px-3 py-4 text-background sm:w-[40%] sm:px-8'>
+            <div className='mx-auto w-full bg-foreground px-3 py-4 text-background sm:w-[50%] sm:px-8'>
               <div className='flex justify-between gap-2'>
                 Name: <span className='text-right'>{tip.name}</span>
               </div>
               <div className='flex justify-between gap-2'>
                 Message:
-                <span className='text-right'>{tip.message}</span>
+                <span className='text-right'>'{tip.message}'</span>
               </div>
               <div className='flex justify-between gap-2'>
                 Amount:{' '}
@@ -67,7 +66,9 @@ export default function Alltips() {
               </div>
               <div className='flex justify-between gap-2'>
                 Date:{' '}
-                <span className='text-right'>{tip.timestamp.toString()}</span>
+                <span className='text-right'>
+                  {formatDateFromTimestamp(tip.timestamp)}
+                </span>
               </div>
             </div>
           ))}
