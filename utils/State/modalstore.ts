@@ -17,6 +17,7 @@ type ModalStore = {
   toggleTipjarVisible: () => void
   walletOptionsVisible: boolean
   toggleWalletOptionsVisible: () => void
+  toggleModal: (modalName: string) => void
 }
 
 export const useModalStore = create<ModalStore>((set) => ({
@@ -44,4 +45,17 @@ export const useModalStore = create<ModalStore>((set) => ({
   walletOptionsVisible: false,
   toggleWalletOptionsVisible: () =>
     set((state) => ({ walletOptionsVisible: !state.walletOptionsVisible })),
+  toggleModal: (modalName: string) => {
+    set((state) => ({
+      workVisible: modalName === 'work' ? !state.workVisible : false,
+      contactVisible: modalName === 'contact' ? !state.contactVisible : false,
+      aboutVisible: modalName === 'about' ? !state.aboutVisible : false,
+      gameVisible: modalName === 'game' ? !state.gameVisible : false,
+      profileVisible: modalName === 'profile' ? !state.profileVisible : false,
+      skillsVisible: modalName === 'skills' ? !state.skillsVisible : false,
+      tipjarVisible: modalName === 'tipjar' ? !state.tipjarVisible : false,
+      walletOptionsVisible:
+        modalName === 'walletOptions' ? !state.walletOptionsVisible : false,
+    }))
+  },
 }))
