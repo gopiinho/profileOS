@@ -9,9 +9,10 @@ import { FaPiggyBank } from 'react-icons/fa'
 import MiniNav from './mininav'
 import { WalletOptions } from '../walletOptions'
 import { parseEther } from 'viem'
-import { useContractWrite } from 'wagmi'
+import { useContractWrite, useContractRead, useAccount } from 'wagmi'
 import tipjarABI from '@/utils/Abis/tipjarAbi.json'
 import { tipjarContractAddress } from '@/utils/constants'
+import Alltips from './alltips'
 
 export default function TipJar({ title }: CardProps) {
   const {
@@ -29,12 +30,28 @@ export default function TipJar({ title }: CardProps) {
   const [message, setMessage] = useState('')
   const [inputValue, setInputValue] = useState('')
 
-  // wagmi.sh contract write setup
+  // wagmi.sh contract write setup & wallet
+  const { isConnected } = useAccount()
+
+  // prepares tipEth function
   const { data, isLoading, isSuccess, write } = useContractWrite({
     address: tipjarContractAddress,
     abi: tipjarABI,
     functionName: 'tipEth',
   })
+
+  /* Function runs on click of the button and runs the wagmi write to process the transaction.
+   */
+  const handlefunctionWrite = () => {
+    const parsedValue = parseEther(`${parseFloat(inputValue)}`)
+
+    /* Write() here uses inputs to use pass in donateEth function. parsedValue is used as a
+       parameter for the function and also to pass in as value for the payable function */
+    write({
+      args: [name, message, parsedValue],
+      value: parsedValue,
+    })
+  }
   // Section handles change of input values
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
@@ -59,19 +76,6 @@ export default function TipJar({ title }: CardProps) {
     setMessage(event.target.value)
   }
 
-  /* Function runs on click of the button and runs the wagmi write to process the transaction.
-   */
-  const handleButtonClick = () => {
-    const parsedValue = parseEther(`${parseFloat(inputValue)}`)
-
-    /* Write() here uses inputs to use pass in donateEth function. parsedValue is used as a
-     parameter for the function and also to pass in as value for the payable function */
-    write({
-      args: [name, message, parsedValue],
-      value: parsedValue,
-    })
-  }
-
   return (
     <motion.div
       initial={{
@@ -92,7 +96,7 @@ export default function TipJar({ title }: CardProps) {
       }}
       className='absolute inset-0 flex items-center justify-center'
     >
-      <Card className='relative h-[95%] w-[95%] sm:h-[80%] sm:w-[70%]'>
+      <Card className='relative h-[95%] w-[95%] overflow-hidden sm:h-[80%] sm:w-[70%]'>
         <CardHeader onClick={toggleTipjarVisible}>
           <CardIcon>
             <FaPiggyBank />
@@ -105,10 +109,9 @@ export default function TipJar({ title }: CardProps) {
         >
           <MiniNav />
           {walletOptionsVisible && <WalletOptions />}
-          <div className='grid h-full sm:flex'>
-            <div className='flex h-full w-full flex-col gap-8 p-1'>
-              <h5>Send ETH with a personalized message!</h5>
-              <div className='mx-auto grid w-[80%] gap-1 bg-foreground px-2 py-4 text-background sm:w-[50%]'>
+          <div className='scrollbar grid h-full gap-10 overflow-scroll py-10 '>
+            <div className='flex h-full w-full flex-col gap-8 py-6'>
+              <div className='inset-0 mx-auto flex h-min w-[80%] flex-col gap-1 bg-foreground px-2 py-4 text-background lg:w-[400px]'>
                 <input
                   type='text'
                   inputMode='text'
@@ -133,13 +136,28 @@ export default function TipJar({ title }: CardProps) {
                   value={inputValue}
                   onChange={handleInputChange}
                 />
-                <Button variant={'threeD'} size={'threeD'}>
-                  Tip
-                </Button>
+                {isConnected ? (
+                  <Button
+                    variant={'threeD'}
+                    size={'threeD'}
+                    onClick={handlefunctionWrite}
+                  >
+                    Tip
+                  </Button>
+                ) : (
+                  <Button
+                    variant={'threeDnormal'}
+                    size={'threeD'}
+                    onClick={toggleWalletOptionsVisible}
+                  >
+                    Connect Wallet
+                  </Button>
+                )}
               </div>
             </div>
-            <div className='h-full w-full p-1'>
-              <h5>Previous Tips</h5>
+            <div className='mx-auto my-6 grid h-full w-[90%] gap-6 sm:my-0'>
+              <h5 className='font-bold uppercase'>History</h5>
+              <Alltips />
             </div>
           </div>
         </div>
