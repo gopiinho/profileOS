@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <div className='relative flex h-screen'>
       <Navbar />
-      <div className='flex h-[100svh] w-full flex-col'>
+      <div className='flex h-[100dvh] w-full flex-col'>
         <div className='relative flex h-full w-full items-center justify-center'>
           <AnimatePresence>
             {workVisible && <Work title='Work' />}
