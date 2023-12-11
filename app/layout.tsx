@@ -29,12 +29,6 @@ const config = createConfig({
         appName: 'wagmi',
       },
     }),
-    new WalletConnectConnector({
-      chains,
-      options: {
-        projectId: '...',
-      },
-    }),
     new InjectedConnector({
       chains,
       options: {
