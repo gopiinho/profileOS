@@ -157,11 +157,14 @@
 }
 
 input {
-  @apply w-full appearance-none border-0 bg-background p-2 text-left text-lg text-foreground outline-0 sm:text-xl;
+  @apply w-full appearance-none border border-transparent bg-background p-2 text-left text-lg text-foreground outline-0 duration-200 hover:border-accent sm:text-xl;
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+    &:focus-within {
+      @apply border-accent;
+    }
   }
 
   /* For Firefox */
