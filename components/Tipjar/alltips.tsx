@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useContractRead, Address } from 'wagmi'
 import { formatEther, parseGwei } from 'viem'
 import tipjarABI from '@/utils/Abis/tipjarAbi.json'
@@ -23,20 +23,30 @@ export default function Alltips() {
     address: tipjarContractAddress,
     abi: tipjarABI,
     functionName: 'getAllTips',
-    onSettled(data: TipProps[] | undefined) {
-      if (data) {
-        setAllTipsData(data)
-      }
-    },
   })
+
+  useEffect(() => {
+    let isMounted = true
+
+    if (data && Array.isArray(data) && isMounted) {
+      setAllTipsData(data)
+    }
+
+    return () => {
+      isMounted = false
+    }
+  }, [data]) // Only trigger the effect when data changes
+
+  // Memoize the tips data
+  const memoizedTipsData = useMemo(() => allTipsData, [allTipsData])
 
   return (
     <>
       {isLoading ? (
-        <div className='mx-auto h-28 w-full animate-pulse bg-foreground px-3 py-4 text-background sm:w-[40%] sm:px-8'></div>
+        <div className='mx-auto h-28 w-full animate-pulse bg-foreground px-3 py-4 text-background sm:px-8 lg:w-[40%]'></div>
       ) : (
         <div className='flex flex-col-reverse gap-3'>
-          {allTipsData.map((tip) => (
+          {memoizedTipsData.map((tip) => (
             <div className='mx-auto w-full bg-foreground px-3 py-4 text-background sm:w-[40%] sm:px-8'>
               <div className='flex justify-between gap-2'>
                 Name: <span className='text-right'>{tip.name}</span>
