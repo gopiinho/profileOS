@@ -31,29 +31,38 @@ export default function Alltips() {
   })
 
   return (
-    <div className='flex flex-col-reverse gap-3'>
-      {allTipsData.map((tip) => (
-        <div className='mx-auto w-full bg-foreground px-3 py-4 text-background sm:w-[40%] sm:px-8'>
-          <div className='flex justify-between gap-2'>
-            Name: <span className='text-right'>{tip.name}</span>
-          </div>
-          <div className='flex justify-between gap-2'>
-            Message:
-            <span className='text-right'>{tip.message}</span>
-          </div>
-          <div className='flex justify-between gap-2'>
-            Amount:{' '}
-            <span className='text-right'>{formatEther(tip.amount)} ETH</span>
-          </div>
-          <div className='flex justify-between gap-2'>
-            Address:{' '}
-            <span className='text-right'>{formatAddress(tip.from)}</span>
-          </div>
-          <div className='flex justify-between gap-2'>
-            Date: <span className='text-right'>{tip.timestamp.toString()}</span>
-          </div>
+    <>
+      {isLoading ? (
+        <div className='mx-auto h-28 w-full animate-pulse bg-foreground px-3 py-4 text-background sm:w-[40%] sm:px-8'></div>
+      ) : (
+        <div className='flex flex-col-reverse gap-3'>
+          {allTipsData.map((tip) => (
+            <div className='mx-auto w-full bg-foreground px-3 py-4 text-background sm:w-[40%] sm:px-8'>
+              <div className='flex justify-between gap-2'>
+                Name: <span className='text-right'>{tip.name}</span>
+              </div>
+              <div className='flex justify-between gap-2'>
+                Message:
+                <span className='text-right'>{tip.message}</span>
+              </div>
+              <div className='flex justify-between gap-2'>
+                Amount:{' '}
+                <span className='text-right'>
+                  {formatEther(tip.amount)} ETH
+                </span>
+              </div>
+              <div className='flex justify-between gap-2'>
+                Address:{' '}
+                <span className='text-right'>{formatAddress(tip.from)}</span>
+              </div>
+              <div className='flex justify-between gap-2'>
+                Date:{' '}
+                <span className='text-right'>{tip.timestamp.toString()}</span>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      )}
+    </>
   )
 }
