@@ -154,6 +154,7 @@ export default function TipJar({ title }: CardProps) {
                   </Button>
                 )}
               </div>
+              <p className='text-accent'>Sepolia Testnet</p>
             </div>
             <div className='mx-auto my-6 grid h-full w-[90%] gap-6 sm:my-0'>
               <h5 className='font-bold uppercase'>History</h5>

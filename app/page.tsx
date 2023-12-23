@@ -10,6 +10,7 @@ import TipJar from '@/components/Tipjar/tipjar'
 import { useModalStore } from '@/utils/State/modalstore'
 import Bar from '@/components/bar'
 import { AnimatePresence } from 'framer-motion'
+import Head from 'next/head'
 
 export default function Home() {
   const {
@@ -46,6 +47,9 @@ export default function Home() {
 
   return (
     <div className='relative flex h-[100dvh]'>
+      <Head>
+        <title>ProfileOS</title>
+      </Head>
       <Navbar />
       <div className='flex h-full w-full flex-col'>
         <div className='relative flex h-full w-full items-center justify-center'>
