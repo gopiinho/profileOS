@@ -47,36 +47,36 @@ export default function Contact({ title }: CardProps) {
           <a
             href='https://twitter.com/gopiinho'
             target='_blank'
-            className='h-full w-full duration-200 hover:bg-[#1C9CEA]/50'
+            className='group h-full w-full duration-200 hover:bg-[#1C9CEA]/50'
           >
-            <span className='flex h-full w-full items-center justify-center text-3xl sm:text-5xl'>
+            <span className='flex h-full w-full items-center justify-center text-3xl group-hover:text-[#1C9CEA] sm:text-5xl'>
               twitter
             </span>{' '}
           </a>
           <a
             href='https://github.com/igopib'
             target='_blank'
-            className='h-full w-full duration-200 hover:bg-[#2EA043]/50'
+            className='group h-full w-full duration-200 hover:bg-[#2EA043]/50'
           >
-            <span className='flex h-full w-full items-center justify-center text-3xl sm:text-5xl'>
+            <span className='flex h-full w-full items-center justify-center text-3xl group-hover:text-[#2EA043] sm:text-5xl'>
               github
             </span>
           </a>
           <a
             href='https://www.linkedin.com/in/gopinho/'
             target='_blank'
-            className='h-full w-full duration-200 hover:bg-[#5560E9]/50'
+            className='group h-full w-full duration-200 hover:bg-[#5560E9]/50'
           >
-            <span className='flex h-full w-full items-center justify-center text-3xl sm:text-5xl'>
+            <span className='flex h-full w-full items-center justify-center text-3xl group-hover:text-[#5560E9] sm:text-5xl'>
               linkedIn
             </span>{' '}
           </a>
           <a
             href='mailto:gopinho@protonmail.com'
             target='_blank'
-            className='h-full w-full duration-200 hover:bg-[#CD3B2F]/50'
+            className='group h-full w-full duration-200 hover:bg-[#CD3B2F]/50'
           >
-            <span className='flex h-full w-full items-center justify-center text-3xl sm:text-5xl'>
+            <span className='flex h-full w-full items-center justify-center text-3xl group-hover:text-[#CD3B2F] sm:text-5xl'>
               mail
             </span>{' '}
           </a>
