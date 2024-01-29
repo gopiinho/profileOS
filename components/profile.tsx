@@ -86,11 +86,7 @@ export default function Profile({ title }: CardProps) {
               </div>
               <div className='flex justify-between text-right'>
                 <span>Likes:</span>
-                <span>Typescript, Solidity</span>
-              </div>
-              <div className='flex justify-between text-right'>
-                <span>Cons:</span>
-                <span>Would give up CSS before tailwind</span>
+                <span>Solidity, Typescript, Philosophy</span>
               </div>
             </div>
           </div>
