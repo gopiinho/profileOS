@@ -46,7 +46,7 @@ export default function Home() {
   }))
 
   return (
-    <div className='relative flex h-[100dvh]'>
+    <div className='relative flex h-[100dvh] overflow-hidden'>
       <Head>
         <title>ProfileOS</title>
       </Head>
