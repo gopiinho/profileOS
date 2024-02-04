@@ -1,5 +1,6 @@
 import React from 'react'
 import { IoIosClose } from 'react-icons/io'
+import Draggable from 'react-draggable'
 
 import { cn } from '@/lib/utils'
 
@@ -7,14 +8,16 @@ const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      'flex flex-col border bg-background text-card-foreground shadow-[7px_7px] shadow-foreground',
-      className
-    )}
-    {...props}
-  />
+  <Draggable handle='.handle' defaultPosition={{ x: 0, y: 0 }} scale={1}>
+    <div
+      ref={ref}
+      className={cn(
+        'flex flex-col overflow-hidden border bg-background text-card-foreground shadow-[7px_7px] shadow-foreground',
+        className
+      )}
+      {...props}
+    />
+  </Draggable>
 ))
 Card.displayName = 'Card'
 
@@ -22,19 +25,21 @@ const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, onClick, children, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      'flex select-none flex-col bg-foreground text-background',
-      className
-    )}
-    {...props}
-  >
-    <div className='flex items-center justify-between border-b p-2'>
-      <div className='flex items-center gap-1'>{children}</div>
-      <span onClick={onClick}>
-        <IoIosClose className='cursor-pointer text-2xl hover:text-accent/80 sm:text-2xl' />
-      </span>
+  <div className='handle'>
+    <div
+      ref={ref}
+      className={cn(
+        'flex cursor-move select-none flex-col bg-foreground text-background',
+        className
+      )}
+      {...props}
+    >
+      <div className='flex items-center justify-between border-b p-2'>
+        <div className='flex items-center gap-1'>{children}</div>
+        <span onClick={onClick}>
+          <IoIosClose className='cursor-pointer text-2xl hover:text-accent/80 sm:text-2xl' />
+        </span>
+      </div>
     </div>
   </div>
 ))
