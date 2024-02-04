@@ -17,7 +17,7 @@ export default function Navbar() {
   const { toggleModal } = useModalStore()
 
   return (
-    <div className='z-20 flex h-[100dvh] flex-col justify-between gap-8'>
+    <div className='z-20 flex h-[100dvh] flex-col justify-between gap-8 bg-background shadow-2xl shadow-foreground/40'>
       <div className='flex select-none flex-col items-center justify-between gap-5 p-2 pt-5 sm:gap-6 2xl:gap-8'>
         <NavIcons
           icon={<ImProfile />}
