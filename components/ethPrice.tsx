@@ -1,4 +1,3 @@
-'use client'
 import { FaEthereum } from 'react-icons/fa'
 import React, { useEffect, useState } from 'react'
 import { fetchEthereumPriceInUSD } from '@/utils/Apis/coinGecko'
@@ -21,7 +20,7 @@ const EthPrice = () => {
   }, [])
 
   return (
-    <div className='absolute bottom-4 right-4 z-20 cursor-pointer text-[0.6rem] duration-200 hover:text-accent sm:text-xs'>
+    <div className='absolute bottom-4 right-4 z-20 cursor-pointer bg-background text-[0.6rem] duration-200 hover:text-accent sm:text-xs'>
       {ethereumPrice ? (
         <div className='flex items-center'>
           <FaEthereum size={20} className='pr-2' />$
