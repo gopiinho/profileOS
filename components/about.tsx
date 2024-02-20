@@ -36,7 +36,7 @@ export default function About({ title }: CardProps) {
       }}
       className='absolute inset-0 flex items-center justify-center'
     >
-      <Card className='h-[95%] w-[95%]'>
+      <Card className='h-[95%] w-[90%] sm:w-[80%]'>
         <CardHeader onClick={toggleAboutVisible}>
           <CardIcon>
             <GiAbstract029 />
