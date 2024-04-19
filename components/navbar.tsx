@@ -44,11 +44,11 @@ export default function Navbar() {
           title='contact'
           onClick={() => toggleModal('contact')}
         />
-        <NavIcons
+        {/* <NavIcons
           icon={<FaGamepad />}
           title='ropasc'
           onClick={() => toggleModal('game')}
-        />
+        /> */}
         <NavIcons
           icon={<FaPiggyBank />}
           title='tipjar'

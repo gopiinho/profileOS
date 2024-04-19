@@ -65,9 +65,9 @@ export default function Home() {
           <AnimatePresence>
             {aboutVisible && <About title='About' />}
           </AnimatePresence>
-          <AnimatePresence>
+          {/* <AnimatePresence>
             {gameVisible && <RockPaperScissor title='RoPaSc' />}
-          </AnimatePresence>
+          </AnimatePresence> */}
           <AnimatePresence>
             {contactVisible && <Contact title='Contact' />}
           </AnimatePresence>
