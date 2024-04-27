@@ -45,7 +45,7 @@ const ProjectItems: ProjectProps[] = [
     name: 'Ender Protocol V1 - Landing',
     description:
       'Landing page for the Ender Protocol V1. Built using Astro and Shadcn-ui.',
-    url: 'https://whimsical-kheer-5221bd.netlify.app/',
+    url: 'https://enderprotocol.io',
     gurl: 'https://github.com/igopib/sibyl-access',
     stack: ['astro', 'tailwindcss', 'typescript', 'shadcn-ui'],
     img: enderv1,
@@ -54,7 +54,7 @@ const ProjectItems: ProjectProps[] = [
     name: 'Ender Protocol - Landing',
     description:
       'Landing page created with layouts and custom css. Heavy use of gradients and custom styling.',
-    url: 'https://enderprotocol.io',
+    url: 'https://ender-protocol.vercel.app/',
     gurl: 'https://github.com/enderprotocol/enderprotocol-fe',
     stack: ['next.js', 'tailwindcss', 'css'],
     img: ender,
