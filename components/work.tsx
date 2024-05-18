@@ -37,7 +37,7 @@ const ProjectItems: ProjectProps[] = [
     description:
       'React app, styled by chakraui and smart contract integration with etherjs. Focus being the theme of the world that nfts take place in.',
     url: 'https://whimsical-kheer-5221bd.netlify.app/',
-    gurl: 'https://github.com/igopib/sibyl-access',
+    gurl: 'https://github.com/gopiinho/sibyl-access',
     stack: ['solidity', 'react', 'chakraUI', 'ethers.js'],
     img: sibyl,
   },
@@ -46,7 +46,7 @@ const ProjectItems: ProjectProps[] = [
     description:
       'Landing page for the Ender Protocol V1. Built using Astro and Shadcn-ui.',
     url: 'https://enderprotocol.io',
-    gurl: 'https://github.com/igopib/sibyl-access',
+    gurl: 'https://github.com/gopiinho/sibyl-access',
     stack: ['astro', 'tailwindcss', 'typescript', 'shadcn-ui'],
     img: enderv1,
   },

@@ -54,7 +54,7 @@ export default function Contact({ title }: CardProps) {
             </span>{' '}
           </a>
           <a
-            href='https://github.com/igopib'
+            href='https://github.com/gopiinho'
             target='_blank'
             className='group h-full w-full duration-200 hover:bg-[#2EA043]/50'
           >
