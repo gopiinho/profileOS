@@ -45,30 +45,32 @@ export default function About({ title }: CardProps) {
         </CardHeader>
         <div className='flex h-10 w-full items-center justify-center bg-primary'>
           <div className='z-10 flex h-6 w-[99%] items-center justify-start bg-foreground p-2 text-sm text-primary sm:text-base'>
-            <p className='text-sm'>https://localhost:3000/about</p>
+            <p className='text-sm'>localhost:3000/about</p>
           </div>
         </div>
         <div
           className='mx-auto flex h-full w-full flex-col items-start p-3 text-base text-accent text-foreground sm:w-[80%] lg:w-[45%] lg:text-lg'
           style={{ fontFamily: 'archivo' }}
         >
-          <div className='my-3 text-4xl font-bold sm:my-6 sm:text-5xl'>
+          <div className='my-3 text-4xl font-bold sm:my-4 sm:text-3xl'>
             <p className='gradient' style={{ fontFamily: 'modeseven' }}>
-              Hello,
+              Hello!
             </p>
           </div>
           <div className='text-sm sm:text-lg'>
             <p>
-              My name is Gurpreet, just another guy spending all day on the
-              internet. I have passion for Technology, Art , Finance and Health.
-              Born and raised in Panjab, currently residing in Winnipeg,
-              Manitoba.
+              My name is Gurpreet, and I love the internet and am solving
+              personal theory of life.
               <br />
-              <br /> Introduced to crypto and blockchains in 2020 and has been
-              my main domain of interest ever since. I develop webapps, create
-              UI/UX and work on smart contracts engaging in a lot of
-              experimental work. Currently, I am focused on frontend and web app
-              development for the{' '}
+              <br /> Currently building{' '}
+              <Link
+                href='https://sympler.xyz'
+                target='_blank'
+                className='gradient hover:underline'
+              >
+                Sympler
+              </Link>{' '}
+              and{' '}
               <Link
                 href='https://enderprotocol.io'
                 target='_blank'
@@ -80,12 +82,7 @@ export default function About({ title }: CardProps) {
               <br />
               <br />
             </p>
-            <p>
-              I love to experiment with web as a creative medium. Learning
-              everything and the passion prevails. One of my life goals is to
-              design and build an Indie game, collab and work with people with
-              drive and potentially inspire other through my work.
-            </p>
+            <p></p>
           </div>
         </div>
       </Card>

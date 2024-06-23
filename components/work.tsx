@@ -13,9 +13,18 @@ import enderApp from '@/public/app.png'
 import sibyl from '@/public/sibyl.png'
 import ender from '@/public/ep.png'
 import enderv1 from '@/public/epv1.png'
-import profileOs from '@/public/profileos.png'
+import sympler from '@/public/sympler.png'
 
 const ProjectItems: ProjectProps[] = [
+  {
+    name: 'Sympler',
+    description:
+      'View ERC token balances, create portfolio and share customizable profiles with friends.',
+    url: 'https://sympler.xyz',
+    gurl: 'https://github.com/gopiinho/sympler',
+    stack: ['next.js', 'typescript', 'tailwindcss', 'drizzle', 'tRPC', 'viem'],
+    img: sympler,
+  },
   {
     name: 'Ender Protocol - App',
     description:

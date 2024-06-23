@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Card, CardHeader, CardIcon, CardTitle } from '@/components/ui/card'
 import { CardProps } from '@/utils/constants'
 import { useModalStore } from '@/utils/State/modalstore'
@@ -48,17 +49,17 @@ export default function Profile({ title }: CardProps) {
             <div className='mix-blend-luminosity'>
               <div className='absolute z-10 overflow-hidden text-[2.5rem] font-bold uppercase opacity-20 sm:text-6xl'>
                 <p>GurpreetSingh</p>
-                <p>nghGurpreetSi</p>
+                <p>GopinhoGopinh</p>
                 <p>GurpreetSingh</p>
-                <p>nghGurpreetSi</p>
+                <p>GopinhoGopinh</p>
                 <p>GurpreetSingh</p>
-                <p>nghGurpreetSi</p>
+                <p>GopinhoGopinh</p>
                 <p>GurpreetSingh</p>
-                <p>nghGurpreetSi</p>
+                <p>GopinhoGopinh</p>
                 <p>GurpreetSingh</p>
-                <p>nghGurpreetSi</p>
+                <p>GopinhoGopinh</p>
                 <p>GurpreetSingh</p>
-                <p>nghGurpreetSi</p>
+                <p>GopinhoGopinh</p>
                 <p>GurpreetSingh</p>
               </div>
               <Image
@@ -68,7 +69,7 @@ export default function Profile({ title }: CardProps) {
               />
             </div>
           </div>
-          <div className='flex h-[40%] w-full flex-col border border-foreground/50 bg-primary p-3 text-xs sm:text-base'>
+          <div className='flex h-[40%] w-full flex-col border border-foreground/50 bg-primary p-3 text-xs sm:text-sm 2xl:text-base'>
             <p
               className='text-shadow gradient pb-2 text-center text-xl font-bold uppercase sm:text-2xl'
               style={{ fontFamily: 'modeseven' }}
@@ -81,12 +82,31 @@ export default function Profile({ title }: CardProps) {
                 <span>Gurpreet Singh</span>
               </div>
               <div className='flex justify-between text-right'>
-                <span>From:</span>
-                <span>Winnipeg,MB</span>
+                <span>Location:</span>
+                <span>Onchain</span>
               </div>
               <div className='flex justify-between text-right'>
-                <span>Likes:</span>
-                <span>Solidity, Typescript, Philosophy</span>
+                <span>Studying:</span>
+                <span>
+                  System designs,{' '}
+                  <Link
+                    href={'https://ethereum.org/en/developers/docs/evm/'}
+                    target='_blank'
+                    rel='noopener'
+                  >
+                    <span>EVM</span>
+                  </Link>
+                </span>
+              </div>
+              <div className='flex justify-between text-right'>
+                <span>Reading:</span>
+                <Link
+                  href={'https://en.wikipedia.org/wiki/The_Brothers_Karamazov'}
+                  target='_blank'
+                  rel='noopener'
+                >
+                  <span>The Brothers Karamazov</span>
+                </Link>
               </div>
             </div>
           </div>

@@ -49,11 +49,11 @@ export default function Navbar() {
           title='ropasc'
           onClick={() => toggleModal('game')}
         /> */}
-        <NavIcons
+        {/* <NavIcons
           icon={<FaPiggyBank />}
           title='tipjar'
           onClick={() => toggleModal('tipjar')}
-        />
+        /> */}
 
         <Link href='/resume' target='_blank'>
           <NavIcons icon={<IoNewspaper />} title='resume' />

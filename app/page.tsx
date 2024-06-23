@@ -71,9 +71,9 @@ export default function Home() {
           <AnimatePresence>
             {contactVisible && <Contact title='Contact' />}
           </AnimatePresence>
-          <AnimatePresence>
+          {/* <AnimatePresence>
             {tipjarVisible && <TipJar title='TipJar' />}
-          </AnimatePresence>
+          </AnimatePresence> */}
         </div>
         <Bar />
       </div>

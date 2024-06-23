@@ -51,28 +51,28 @@ export default function Skills({ title }: CardProps) {
                   <div className='text-lg font-semibold uppercase'>
                     Smart Contracts
                   </div>
-                  <div className='ml-3 grid'>
-                    <span>-Solidity</span>
-                    <span>-Foundry</span>
-                    <span>-Hardhat</span>
+                  <div className='ml-3 grid text-foreground/60'>
+                    <span>Solidity</span>
+                    <span>Foundry</span>
+                    <span>Hardhat</span>
                   </div>
                 </div>
                 <div className='bg-primary p-2'>
                   <div className='text-lg font-semibold uppercase'>
                     Interactions
                   </div>
-                  <div className='ml-3 grid'>
-                    <span>-Wagmi.sh</span>
-                    <span>-Ethers.js</span>
-                    <span>-Rainbow Kit</span>
+                  <div className='ml-3 grid text-foreground/60'>
+                    <span>Viem</span>
+                    <span>Wagmi.sh</span>
+                    <span>Ethers.js</span>
                   </div>
                 </div>
                 <div className='bg-primary p-2'>
                   <div className='text-lg font-semibold uppercase'>Tools</div>
-                  <div className='ml-3 grid'>
-                    <span>-IPFS</span>
-                    <span>-Openzepplin</span>
-                    <span>-Chainlink</span>
+                  <div className='ml-3 grid text-foreground/60'>
+                    <span>IPFS</span>
+                    <span>Openzepplin</span>
+                    <span>Chainlink</span>
                   </div>
                 </div>
               </div>
@@ -90,27 +90,27 @@ export default function Skills({ title }: CardProps) {
                   <div className='text-lg font-semibold uppercase'>
                     Frontend
                   </div>
-                  <div className='ml-3 grid'>
-                    <span>-Typescript</span>
-                    <span>-Next.js</span>
-                    <span>-Astro</span>
+                  <div className='ml-3 grid text-foreground/60'>
+                    <span>Typescript</span>
+                    <span>Next.js</span>
+                    <span>Astro</span>
                   </div>
                 </div>
                 <div className='bg-primary p-2'>
                   <div className='text-lg font-semibold uppercase'>UI/UX</div>
-                  <div className='ml-3 grid'>
-                    <span>-Tailwindcss/CSS</span>
-                    <span>-Shadcn-ui</span>
-                    <span>-Framer Motion</span>
+                  <div className='ml-3 grid text-foreground/60'>
+                    <span>Tailwindcss/CSS</span>
+                    <span>Shadcn-ui</span>
+                    <span>Framer Motion</span>
                   </div>
                 </div>
                 <div className='bg-primary p-2'>
                   <div className='text-lg font-semibold uppercase'>
                     Design Tools
                   </div>
-                  <div className='ml-3 grid'>
-                    <span>-Figma</span>
-                    <span>-(Lots of Inspirations)</span>
+                  <div className='ml-3 grid text-foreground/60'>
+                    <span>Figma</span>
+                    <span>(Lots of Inspirations)</span>
                   </div>
                 </div>
               </div>
@@ -128,36 +128,24 @@ export default function Skills({ title }: CardProps) {
                 <div className='grid gap-2'>
                   <div className='bg-primary p-2'>
                     <div className='text-lg font-semibold uppercase'>
-                      Management
-                    </div>
-                    <div className='ml-3 grid'>
-                      <span>-Git & Github</span>
-                      <span>-Jira / Slack</span>
-                    </div>
-                  </div>
-                  <div className='bg-primary p-2'>
-                    <div className='text-lg font-semibold uppercase'>
                       Deployments
                     </div>
-                    <div className='ml-3 grid'>
-                      <span>-Vercel / Netlify</span>
-                      <span>-AWS / Azure</span>
+                    <div className='ml-3 grid text-foreground/60'>
+                      <span>Vercel / Netlify</span>
+                      <span>AWS / Azure</span>
                     </div>
                   </div>
                   <div className='bg-primary p-2 '>
                     <div className='text-lg font-semibold uppercase'>
                       Testing
                     </div>
-                    <div className='ml-3 grid'>
-                      <span>-Mocha</span>
-                      <span>-Foundry</span>
+                    <div className='ml-3 grid text-foreground/60'>
+                      <span>Mocha</span>
+                      <span>Foundry</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <p className='p-1 text-[0.6rem]'>
-                Ability to always learn and adapt.
-              </p>
             </div>
           </div>
         </div>
