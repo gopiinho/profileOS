@@ -24,11 +24,11 @@ export default function Projects({
           <span className='gradient py-2 text-2xl font-semibold uppercase sm:text-3xl'>
             {name}
           </span>
-          <span>{description}</span>
+          <span className='opacity-60'>{description}</span>
           <span className='pt-4'>
             {stack.map((data, index) => (
               <span
-                className='mr-1 cursor-pointer bg-foreground/90 p-1 px-2 text-sm text-background hover:bg-background hover:text-foreground'
+                className='mr-1 cursor-pointer bg-foreground/60 p-1 px-2 text-sm text-background hover:bg-background hover:text-foreground'
                 key={index}
               >
                 {data}

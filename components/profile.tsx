@@ -88,7 +88,7 @@ export default function Profile({ title }: CardProps) {
               <div className='flex justify-between text-right'>
                 <span>Studying:</span>
                 <span>
-                  System designs,{' '}
+                  Security research,{' '}
                   <Link
                     href={'https://ethereum.org/en/developers/docs/evm/'}
                     target='_blank'
